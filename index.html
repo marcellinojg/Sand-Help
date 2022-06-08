@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Images/favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <title>SAND HELP</title>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="pt-5"></div>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT US</a>
+        <a href="#">DONATE NOW</a>
+        <a href="#">PROJECT LOCATION</a>
+    </div>
+  <!-- Sidebar End -->
+
+  <!-- Navbar Button -->
+  <div id="main" class="ml-auto">
+    <button class="openbtn" id="openBtn" onclick="openNav()">☰</button> 
+  </div>
+  <!-- Navbar Button End -->
+  
+  <!-- Background Beach Container -->
+  <div id="background-beach-container" class="container-fluid ">
+
+      <!-- Video Background -->
+    <video autoplay muted loop class="video_beach">
+        <source id="beach_video_background" src="" type="video/mp4"/>
+    </video>
+    <!-- Video Background End -->
+
+    <!-- Total Donation Text -->
+    <h3 class="text-center text-white" id="totalDonation">
+        DONASI TERKUMPUL <br>
+    </h3>
+    <h1 class="count text-center text-white" data-value=2000000000 id="currentProgress">0</h1>
+    <!-- Total Donation Text End -->
+
+  </div>
+  <!-- Background Beach Container End -->
+
+  <!-- Container donasi -->
+  <div class="container-fluid" id="areaDonasi">
+    <div class="row">
+
+        <!-- Left column -->
+        <div class="col-md-4">
+
+        </div>
+        <!-- Left column end -->
+
+        <!-- Middle column -->
+        <div class="col-md-4">
+            <div class="card text-center mx-auto" id = "donationCard">
+                <!-- Card body -->
+                <div class="card-body">
+                    <h1>GABUNG SAND HELP!</h1>
+                    <hr>
+                    <h4 class="pt-3">Rp. 5,000.00 = 1 Kg Sampah</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="1">1 kg</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="5">5 kg</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="10">10 kg</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="20">20 kg</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="100">100 kg</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="" id="btnKg" data-value="200">200 kg</button>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="number" id="amountDonation" placeholder="Jumlah lainnya" name="amountDonation">
+                    <hr>
+                    <button id="btnSubmit">
+                        Next
+                    </button>
+                </div>
+                <!-- Card body end -->
+            </div>
+            <div class="card mx-auto" id = "donationCard2">
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+        <!-- Middle Column End -->
+
+        <!-- Right column -->
+        <div class="col-md-4">
+
+        </div>
+        <!-- Right column end -->
+
+    </div>
+  </div>
+  <!-- Container Donasi End -->
+
+  <footer>
+      test
+  </footer>
+  
+</body>
+
+<script>
+    //Navbar Function
+    function openNav() {
+        document.getElementById("openBtn").style.visibility = "hidden";
+        
+
+        document.getElementById("mySidebar").style.width = "20%";
+        document.getElementById("main").style.marginLeft = "20%";
+        if (window.innerWidth <= 600){
+            document.getElementById("mySidebar").style.width = "100%";
+            document.getElementById("main").style.marginLeft = "100%";
+        }
+    }
+      
+    function closeNav() {
+        document.getElementById("openBtn").style.visibility = "visible";
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+    //Navbar Function End
+
+    //Animate Number Function
+    function animateProgessNumber(obj,start,end,duration){
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const currencyFractionDigits = new Intl.NumberFormat('de-DE', {
+                style: 'currency',
+                currency: 'IDR',
+            }).resolvedOptions().maximumFractionDigits;
+            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('en-US',{
+                maximumFractionDigits: currencyFractionDigits 
+            });
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    obj = document.getElementById("currentProgress");
+    console.log(obj.getAttribute("data-value"))
+    animateProgessNumber(obj,0,Number(obj.getAttribute("data-value")),2000)
+
+    //Function Ganti background sesuai jam
+    function changeBackground(){
+        var now = new Date();
+        backgroundHolder = document.getElementById("beach_video_background");
+        console.log = backgroundHolder;
+        //Malam jam 0 - 3
+        if(now.getHours() >= 0 && now.getHours() <= 3){
+            backgroundHolder.src = "Videos/background_beach_night.mp4";
+        }
+        //Pagi jam 4 - 7
+        else if(now.getHours() >= 4 && now.getHours() <= 7) {
+            backgroundHolder.src = "Videos/background_beach_dawn.mp4";
+            
+        }
+        // Siang jam 8 - 14
+        else if(now.getHours() >= 8 && now.getHours() <= 14) {
+            backgroundHolder.src = "Videos/background_beach_sunny.mp4";
+            
+        }
+        // Sore jam 15 - 17
+        else if(now.getHours() >= 15 && now.getHours() <= 17) {
+            backgroundHolder.src = "Videos/background_beach_dawn.mp4";
+            
+        }
+        
+        // Malam jam 18 - 24
+        else if(now.getHours() >= 18 && now.getHours() <= 24) {
+            backgroundHolder.src = "Videos/background_beach_night.mp4";
+            
+        }
+
+    }
+    changeBackground();
+</script>
+
+<script>
+
+</script>
+</html>
