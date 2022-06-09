@@ -39,10 +39,10 @@ body{
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.671);
+    background-color: rgba(255, 255, 255, 0.767);
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 40px;
   }
   
   .sidebar a {
@@ -58,6 +58,18 @@ body{
   
   .sidebar a:hover {
     color: #c5c5c5;
+  }
+
+  #name{
+    padding: 6px 8px 0px 32px;
+    font-weight: bold;
+  }
+
+  #title{
+        padding: 6px 8px 12px 32px;
+        margin-bottom: 12px;
+        color: #d6ac50;
+        font-weight: bold;
   }
   
   .sidebar .closebtn {
@@ -270,4 +282,47 @@ body{
     
 }
 
+.footer-copyright a:hover{
+    text-decoration: none;
+    color: gray;
+}
+
+.footer-copyright a{
+    color: white;
+}
+
+footer{
+    margin-top: 5vh;
+    bottom: 0;
+    background-color: #630606
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa {
+    padding: 25px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 200%;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.192);
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-youtube {
+      background: #bb0000;
+      color: white;
+  }
 

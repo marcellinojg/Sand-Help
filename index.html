@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="icon" type="image/png" href="Images/favicon.png">
     <link rel="stylesheet" href="index.css">
     <title>SAND HELP</title>
@@ -19,12 +20,15 @@
 
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
+        <h2 id="name" class="">Glenn Steven Santoso</h2>
+        <h3 id="title">Novice</h3>
+        <hr>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="pt-5"></div>
-        <a href="#">HOME</a>
-        <a href="#">ABOUT US</a>
-        <a href="#">DONATE NOW</a>
-        <a href="#">PROJECT LOCATION</a>
+        <a href="#background-beach-container" class="pt-3">HOME</a>
+        <a href="#areaDonasi">DONATE NOW</a>
+        <a href="#">LEADERBOARD</a>
+        
+        <a href="#">PROJECT LOCATIONS</a>
     </div>
   <!-- Sidebar End -->
 
@@ -37,7 +41,7 @@
   <!-- Background Beach Container -->
   <div id="background-beach-container" class="container-fluid ">
 
-      <!-- Video Background -->
+    <!-- Video Background -->
     <video autoplay muted loop class="video_beach">
         <source id="beach_video_background" src="" type="video/mp4"/>
     </video>
@@ -103,28 +107,38 @@
                 </div>
                 <!-- Card body end -->
             </div>
+            <!-- Card bagian 2 -->
             <div class="card mx-auto" id = "donationCard2">
                 <div class="card-body">
+                    <h1 class="text-center">Details</h1>
+                    <hr>
+                    <label for="displayName">Nama donatur</label>
+                    <input type="text" id="displayName" onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
+                    <label for="message">Pesan</label>
+                    <input type="text" id="displayName" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
 
                 </div>
             </div>
+            <!-- Card bagian 2 end -->
         </div>
         <!-- Middle Column End -->
-
-        <!-- Right column -->
-        <div class="col-md-4">
-
-        </div>
-        <!-- Right column end -->
-
     </div>
   </div>
-  <!-- Container Donasi End -->
-
-  <footer>
-      test
-  </footer>
+  <!-- Container donasi end -->
   
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div> -->
 </body>
 
 <!-- Javascripts -->
@@ -134,8 +148,8 @@
         document.getElementById("openBtn").style.visibility = "hidden";
         
 
-        document.getElementById("mySidebar").style.width = "20%";
-        document.getElementById("main").style.marginLeft = "20%";
+        document.getElementById("mySidebar").style.width = "30%";
+        document.getElementById("main").style.marginLeft = "30%";
         if (window.innerWidth <= 600){
             document.getElementById("mySidebar").style.width = "100%";
             document.getElementById("main").style.marginLeft = "100%";
@@ -243,8 +257,6 @@
             errorInputTab.innerHTML = "Masukkan input terlebih dahulu!";
         }
     }
-
-
 </script>
 
 <!-- Jquery -->
