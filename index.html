@@ -100,7 +100,7 @@
                     <hr>
                     <div class="text-center">
                         <button id="btnSubmit" onclick="nextDonationCard2()">
-                            Next
+                           Lanjut
                         </button>
                     </div>
                     
@@ -113,10 +113,34 @@
                     <h1 class="text-center">Details</h1>
                     <hr>
                     <label for="displayName">Nama donatur</label>
-                    <input type="text" id="displayName" onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
+                    <br>
+                    <input type="text" id="displayName" class="inputDetails" required onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
+                    <br>
                     <label for="message">Pesan</label>
-                    <input type="text" id="displayName" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
-
+                    <br>
+                    <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
+                    <br>
+                    <label for="total">Jumlah</label>
+                    <br>
+                    <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()" name="amountDonation" readonly value="Rp. ">
+                    <br>
+                    <label for="paymentOption">Pilih metode pembayaran</label>
+                    <br>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="inputGroupSelect01">Metode</label>
+                        </div>
+                        <select class="custom-select" id="paymentOption" required>
+                          <option selected>Pilih..</option>
+                          <option value="1">Paypal</option>
+                        </select>
+                    </div>
+                    <br>
+                    <label class="form-check-label" id="anonymousCheckbox">
+                        <input type="checkbox" class="form-check-input" value="">Kirim donasi secara rahasia
+                    </label>
+                    <hr>
+                    <input type="submit" value="Bayar" id="btnSubmit">
                 </div>
             </div>
             <!-- Card bagian 2 end -->
@@ -126,19 +150,13 @@
   </div>
   <!-- Container donasi end -->
   
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-
-            </div>
-            <div class="col-md-4">
-
-            </div>
+    <div class="container-fluid text-center footer pt-3 pb-3">
+        <div class="">
+            <a href="https://www.instagram.com" class="fa fa-instagram link-footer ml-2 mr-2"></a>
+            <a href="https://www.twitter.com" class="fa fa-twitter link-footer ml-2 mr-2"></a>
+            <a href="https://www.youtube.com" class="fa fa-youtube link-footer ml-2 mr-2"></a>
         </div>
-    </div> -->
+    </div>
 </body>
 
 <!-- Javascripts -->
@@ -249,6 +267,15 @@
         if(amount != null){
             document.getElementById("donationCard").style.display = 'none';
             document.getElementById("donationCard2").style.display = 'block';
+            var jumlahBayar = parseInt(amount) * 5000;
+            const currencyFractionDigits = new Intl.NumberFormat('de-DE', {
+                style: 'currency',
+                currency: 'IDR',
+            }).resolvedOptions().maximumFractionDigits;
+            document.getElementById("total").value += jumlahBayar.toLocaleString('en-US',{
+                maximumFractionDigits: currencyFractionDigits 
+            }) + ",00 (" + amount + " kg)";
+            
             //alert(amount);
         }
         else{
