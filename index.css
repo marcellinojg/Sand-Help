@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'ZonaProUltra';
     src: url("Fonts/ZonaPro-ExtraLight.otf") format("opentype");
@@ -13,22 +12,21 @@
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    
 }
 
-body{
+body {
     font-family: 'ZonaProUltra', sans-serif;
 }
 
@@ -43,10 +41,11 @@ body{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 40px;
-  }
-  
-  .sidebar a {
-    padding: 12px 8px 8px 32px;
+}
+
+.sidebar a {
+    padding-left: 30px;
+    padding-top: 30px;
     text-decoration: none;
     font-size: 25px;
     /* text-shadow: 2px 2px rgba(0, 0, 0, 0.603); */
@@ -54,33 +53,34 @@ body{
     color: #201f1fd3;
     display: block;
     transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: #c5c5c5;
-  }
+}
 
-  #name{
+.sidebar a:hover {
+    color: #afaeae;
+}
+
+#name {
     padding: 6px 8px 0px 32px;
     font-weight: bold;
-  }
+}
 
-  #title{
-        padding: 6px 8px 12px 32px;
-        margin-bottom: 12px;
-        color: #d6ac50;
-        font-weight: bold;
-  }
-  
-  .sidebar .closebtn {
+#title {
+    padding: 6px 8px 12px 32px;
+    margin-bottom: 12px;
+    color: #d6ac50;
+    font-weight: bold;
+}
+
+.sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  .openbtn {
+    padding-top: 10px;
+}
+
+.openbtn {
     font-size: 20px;
     right: 15px;
     position: fixed;
@@ -91,24 +91,29 @@ body{
     border-radius: 100px;
     border-color: white;
     z-index: 2;
-  }
-  
-  .openbtn:hover {
+}
+
+.openbtn:hover {
     background-color: rgb(173, 173, 173);
-  }
-  
+}
+
 #main {
     transition: margin-left .5s;
     padding: 16px;
 }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
 }
 
-#background-beach-container{
+#background-beach-container {
     padding-top: 100px;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -116,74 +121,76 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-    #background-beach-container{
+    #background-beach-container {
         height: 100vh;
     }
-    
+
 }
 
-#currentProgress{
+#currentProgress {
     font-size: 6vw;
     font-weight: bold;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.603);
 }
 
 @media only screen and (max-width: 600px) {
-    #currentProgress{
+    #currentProgress {
         font-size: 12vw;
     }
-    
+
 }
 
-#totalDonation{
-    padding-top: 40vh; 
-    font-size:2vw;
+#totalDonation {
+    padding-top: 40vh;
+    font-size: 2vw;
     font-weight: bold;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.603);
 }
 
 @media only screen and (max-width: 600px) {
-    #totalDonation{
+    #totalDonation {
         padding-top: 28vh;
         font-size: 6vw;
     }
-    
+
 }
-.video_beach{
-    position:absolute;
+
+.video_beach {
+    position: absolute;
     z-index: -1;
     top: 0;
-    width:100%;
-    height:120vh;
+    width: 100%;
+    height: 120vh;
     object-fit: cover;
-    opacity:1;
+    opacity: 1;
     margin-left: -15px;
 }
 
 @media only screen and (max-width: 600px) {
-    .video_beach{
+    .video_beach {
         height: 100vh;
     }
-    
+
 }
 
-#btnKg{
-    width: 90%;;
+#btnKg {
+    width: 100%;
+    font-weight: bold;
     margin-top: 15px;
     height: 5.5vh;
     border-radius: 8px;
     border-width: 0.5px;
-    border-color: rgba(128, 128, 128, 0.178);
+    border-color: rgba(0, 0, 0, 0.178);
     background-color: white;
 }
 
-#btnKg:hover{
+#btnKg:hover {
     background-color: #e2e2e2;
 }
 
 
-#btnSubmit{
-    
+#btnSubmit {
+
     margin-top: 15px;
     height: 5.5vh;
     border-radius: 30px;
@@ -193,26 +200,26 @@ body{
     font-weight: bold;
 }
 
-#btnSubmit:hover{
+#btnSubmit:hover {
     background-color: #f3ba3f;
 }
 
 
 
-#donationCard{
+#donationCard {
     margin-top: 10vh;
     align-self: center;
-    width: 80%;
+    width: 60%;
     border: 0.5px solid rgba(29, 29, 29, 0.281);
     border-radius: 15px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.644);
     margin-bottom: 10vh;
 }
 
-#donationCard2{
+#donationCard2 {
     margin-top: 10vh;
     align-self: center;
-    width: 80%;
+    width: 60%;
     border: 0.5px solid rgba(29, 29, 29, 0.281);
     border-radius: 15px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.644);
@@ -220,53 +227,49 @@ body{
     display: none;
 }
 
-.card-body h1{
-    font-weight: bold;
-    
+@media only screen and (max-width: 600px) {
+    #donationCard {
+        width: 100%;
+    }
+    #donationCard2 {
+        width: 100%;
+    }
 }
 
-#areaDonasi{
+.card-body h1 {
+    font-weight: bold;
+
+}
+
+#areaDonasi {
     margin-top: -3.5vh;
-    background-image: linear-gradient(to bottom, #ffcc5e , white);
+    background-image: linear-gradient(to bottom, #ffcc5e, white);
 }
 
 
 
 @media only screen and (max-width: 600px) {
-    #areaDonasi{
+    #areaDonasi {
         margin-top: -4.8vh;
     }
 }
 
-#pembatas{
-    left: -5; 
-    margin-top: -10px;
-}
 
-#amountDonation{
+#amountDonation {
     border-radius: 8px;
     border-width: 0.5px;
-    border-color: rgba(128, 128, 128, 0.178);
-    width: 95%;
+    border-color: rgba(0, 0, 0,0.178);
+    width: 100%;
     height: 5vh;
     padding-left: 1vw;
     font-weight: bold;
 }
 
-#amountDonation:focus{
+#amountDonation:focus {
     background-color: #ffcc5e;
-    border-width: 0.5px;
-    border-color: rgba(128, 128, 128, 0.178);
 }
 
-@media only screen and (max-width: 600px) {
-    #amountDonation{
-        width: 90%;
-    }
-    
-}
-
-#errorInputKgTab{
+#errorInputKgTab {
     color: red;
     font-weight: bold;
     padding-left: 2.5%;
@@ -275,13 +278,13 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-    #errorInputKgTab{
+    #errorInputKgTab {
         padding-left: 5%;
     }
-    
+
 }
 
-.inputDetails{
+.inputDetails {
     border-radius: 8px;
     border-width: 0.5px;
     border-color: rgba(128, 128, 128, 0.178);
@@ -292,35 +295,39 @@ body{
     margin-bottom: 3vh;
 }
 
-#anonymousCheckbox{
+.labelInputs{
+    font-weight: bold;
+}
+
+#anonymousCheckbox {
     padding-left: 20px;
 }
 
 @media only screen and (max-width: 600px) {
-    .inputDetails{
+    .inputDetails {
         font-size: smaller;
     }
-    
+
 }
 
-#previousCard{
+#previousCard {
     font-weight: bold;
 }
 
-#previousCard:hover{
+#previousCard:hover {
     color: rgba(128, 128, 128, 0.527);
     text-decoration: underline;
 }
 
-.inputDetails:focus{
+.inputDetails:focus {
     background-color: #ffcc5e;
     border-width: 0.5px;
     border-color: rgba(128, 128, 128, 0.178);
 }
 
-.fa-facebook {
-    background: #3B5998;
-    color: white;
+.sandhelp{
+    font-size: 200%;
+    font-weight: bold;
 }
 
 .fa {
@@ -328,35 +335,47 @@ body{
     font-size: 20px;
     text-align: center;
     text-decoration: none;
-    margin: 2px 2px;
     border-radius: 200%;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.192);
-  }
+}
 
-  
+@media only screen and (max-width: 600px) {
+    .fa {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .sandhelp{
+        font-size: 120%;
+    }
+}
+
+
 .fa:hover {
     opacity: 0.7;
     color: gray;
     text-decoration: none;
-  }
+}
 
-  .fa-instagram {
+.fa-instagram {
     background: #125688;
     color: white;
-  }
-  .fa-twitter {
+}
+
+.fa-twitter {
     background: #55ACEE;
     color: white;
-  }
-  
-  .fa-youtube {
-      background: #bb0000;
-      color: white;
-  }
+}
 
-  .footer{
-      background-color: #ffcc5e;
-  }
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
 
-  
+.footer {
+    bottom: 0;
+    background-color: #ffcc5e;
+    position: relative;
+    z-index: 2;
+}
 

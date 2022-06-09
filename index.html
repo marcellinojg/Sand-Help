@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,40 +12,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script defer src="node_modules/swup/dist/swup.min.js"></script>
     <link rel="icon" type="image/png" href="Images/favicon.png">
     <link rel="stylesheet" href="index.css">
     <title>SAND HELP</title>
 </head>
-<body>
+
+<body onload="changeBackground();">
+
+
+
 
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
-        <h2 id="name" class="">Glenn Steven Santoso</h2>
+        <h2 id="name" class="pt-3">Glenn Steven Santoso</h2>
         <h3 id="title">Novice</h3>
-        <hr>
+        <hr> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#background-beach-container" class="pt-3">HOME</a>
         <a href="#areaDonasi">DONATE NOW</a>
         <a href="#">LEADERBOARD</a>
-        
         <a href="#">PROJECT LOCATIONS</a>
     </div>
     <!-- Sidebar End -->
 
     <!-- Navbar Button -->
     <div id="main" class="ml-auto">
-        <button class="openbtn" id="openBtn" onclick="openNav()">☰</button> 
+        <button class="openbtn" id="openBtn" onclick="openNav()">☰</button>
     </div>
     <!-- Navbar Button End -->
-  
+
     <!-- Background Beach Container -->
     <div id="background-beach-container" class="container-fluid ">
 
         <!-- Video Background -->
         <video autoplay muted loop class="video_beach">
-            <source id="beach_video_background" src="" type="video/mp4"/>
+            <source id="beach_video_background" src="Videos/background_beach_night.mp4" type="video/mp4" />
         </video>
         <!-- Video Background End -->
 
@@ -70,12 +74,14 @@
 
             <!-- Middle column -->
             <div class="col-md-4">
-                <div class="card  mx-auto" id = "donationCard">
+
+                <!-- Card bagian 1 -->
+                <div class="card mx-auto" id="donationCard">
                     <!-- Card body -->
                     <div class="card-body">
-                        <h1 class="text-center">GABUNG SAND HELP!</h1>
+                        <h1 class="text-center" style="color:#ffcc5e;text-shadow: 1px 1px rgba(0, 0, 0, 0.603);">GABUNG SAND HELP!</h1>
                         <hr>
-                        <h4 class="pt-3 text-center">Rp. 5,000.00 = 1 Kg Sampah</h4>
+                        <h4 class="pt-3 text-center" style="font-weight: bold;">Rp. 5,000.00 = 1 Kg Sampah</h4>
                         <div class="row">
                             <div class="col-md-6 text-center">
                                 <button class="" id="btnKg" data-value=10 onclick="setKg(this)">10kg</button>
@@ -94,42 +100,44 @@
                         </div>
                         <br>
                         <div class="text-center">
-                            <input type="number" id="amountDonation" onclick="resetColorButtons()" placeholder="Jumlah lainnya" name="amountDonation">
+                            <input type="number" id="amountDonation" onclick="resetColorButtons()"
+                                placeholder="Jumlah lainnya" name="amountDonation">
                         </div>
 
                         <div id="errorInputKgTab"></div>
                         <hr>
                         <div class="text-center">
                             <button id="btnSubmit" onclick="nextDonationCard2()" style="width: 95%;;">
-                            Lanjut
+                                Lanjut
                             </button>
                         </div>
-                        
                     </div>
                     <!-- Card body end -->
                 </div>
+                <!-- Card bagian 1 end -->
+
                 <!-- Card bagian 2 -->
                 <div class="card mx-auto" id = "donationCard2">
                     <div class="card-body ">
                         <h1 class="text-center">Details</h1>
                         <hr>
-                        <label for="displayName">Nama donatur</label>
+                        <label for="displayName" class="labelInputs">Nama donatur</label>
                         <br>
                         <input type="text" id="displayName" class="inputDetails" required onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
                         <br>
-                        <label for="message">Pesan</label>
+                        <label for="message" class="labelInputs">Pesan</label>
                         <br>
                         <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
                         <br>
-                        <label for="total">Jumlah</label>
+                        <label for="total" class="labelInputs">Jumlah</label>
                         <br>
                         <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()" name="amountDonation" readonly value="Rp. ">
                         <br>
-                        <label for="paymentOption">Pilih metode pembayaran</label>
+                        <label for="paymentOption " class="labelInputs"> Pilih metode pembayaran</label>
                         <br>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Metode</label>
+                            <label class="input-group-text" style="font-weight:bold;" for="inputGroupSelect01">Metode</label>
                             </div>
                             <select class="custom-select" id="paymentOption" required>
                             <option selected>Pilih..</option>
@@ -137,13 +145,13 @@
                             </select>
                         </div>
                         <br>
-                        <label class="form-check-label" id="anonymousCheckbox">
-                            <input type="checkbox" class="form-check-input" value="">Kirim donasi secara rahasia
+                        <label class="form-check-label" class="labelInputs" id="anonymousCheckbox">
+                            <input type="checkbox" class="form-check-input" value="" > <div style="font-weight: bold;">Kirim donasi secara rahasia</div> 
                         </label>
                         <hr>
                         <input type="submit" value="Bayar" id="btnSubmit" style="width: 100%;">
                         <div class="text-center mt-3">
-                            <a onclick="previousDonationCard()" id="previousCard">Previous</a>
+                            <a onclick="previousDonationCard()" id="previousCard">Kembali</a>
                         </div>
                         
                         
@@ -152,23 +160,48 @@
                 <!-- Card bagian 2 end -->
             </div>
             <!-- Middle Column End -->
+
+            <!-- Left column -->
+            <div class="col-md-4">
+
+            </div>
+            <!-- Left column end -->
         </div>
     </div>
     <!-- Container donasi end -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-8 text-center pt-5 mt-5">
+                <h1 style="font-weight: bold;">LEADERBOARD</h1>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+
+        </div>
+    </div>
 
 
 
     <!-- Footer -->
     <div class="container-fluid text-center footer pt-3 pb-3">
-        <div class="">
-            <a href="https://www.instagram.com" class="fa fa-instagram link-footer ml-2 mr-2"></a>
-            <a href="https://www.twitter.com" class="fa fa-twitter link-footer ml-2 mr-2"></a>
-            <a href="https://www.youtube.com" class="fa fa-youtube link-footer ml-2 mr-2"></a>
+        <div class="row">
+            <div class="col-md-2 mt-2">
+                <h3 class="sandhelp">#SANDHELP</h3>
+            </div>
+            <div class="col-md-8 ">
+                <a href="https://www.instagram.com" class="fa fa-instagram link-footer ml-2 mr-2"></a>
+                <a href="https://www.twitter.com" class="fa fa-twitter link-footer ml-2 mr-2"></a>
+                <a href="https://www.youtube.com" class="fa fa-youtube link-footer ml-2 mr-2"></a>
+            </div>
+            
         </div>
     </div>
     <!-- Footer End  -->
-
-    
 </body>
 
 <!-- Javascripts -->
@@ -176,25 +209,25 @@
     //Navbar Function
     function openNav() {
         document.getElementById("openBtn").style.visibility = "hidden";
-        
+
 
         document.getElementById("mySidebar").style.width = "30%";
         document.getElementById("main").style.marginLeft = "30%";
-        if (window.innerWidth <= 600){
+        if (window.innerWidth <= 600) {
             document.getElementById("mySidebar").style.width = "100%";
             document.getElementById("main").style.marginLeft = "100%";
         }
     }
-      
+
     function closeNav() {
         document.getElementById("openBtn").style.visibility = "visible";
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("main").style.marginLeft = "0";
     }
     //Navbar Function End
 
     //Animate Number Function
-    function animateProgessNumber(obj,start,end,duration){
+    function animateProgessNumber(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
@@ -203,8 +236,8 @@
                 style: 'currency',
                 currency: 'IDR',
             }).resolvedOptions().maximumFractionDigits;
-            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('en-US',{
-                maximumFractionDigits: currencyFractionDigits 
+            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString('en-US', {
+                maximumFractionDigits: currencyFractionDigits
             });
             if (progress < 1) {
                 window.requestAnimationFrame(step);
@@ -214,52 +247,54 @@
     }
     obj = document.getElementById("currentProgress");
     console.log(obj.getAttribute("data-value"))
-    animateProgessNumber(obj,0,Number(obj.getAttribute("data-value")),2000)
+    animateProgessNumber(obj, 0, Number(obj.getAttribute("data-value")), 2000)
 
     //Function Ganti background sesuai jam
-    function changeBackground(){
+    function changeBackground() {
         var now = new Date();
         backgroundHolder = document.getElementById("beach_video_background");
         console.log = backgroundHolder;
         //Malam jam 0 - 3
-        if(now.getHours() >= 0 && now.getHours() <= 3){
+        if (now.getHours() >= 0 && now.getHours() <= 3) {
             backgroundHolder.src = "Videos/background_beach_night.mp4";
+            //alert("0-3")
         }
         //Pagi jam 4 - 7
-        else if(now.getHours() >= 4 && now.getHours() <= 7) {
+        else if (now.getHours() >= 4 && now.getHours() <= 7) {
             backgroundHolder.src = "Videos/background_beach_dawn.mp4";
-            
+            //alert("4-7")
         }
         // Siang jam 8 - 14
-        else if(now.getHours() >= 8 && now.getHours() <= 14) {
+        else if (now.getHours() >= 8 && now.getHours() <= 14) {
             backgroundHolder.src = "Videos/background_beach_sunny.mp4";
-            
+            //alert("8-14")
         }
         // Sore jam 15 - 17
-        else if(now.getHours() >= 15 && now.getHours() <= 17) {
+        else if (now.getHours() >= 15 && now.getHours() <= 17) {
             backgroundHolder.src = "Videos/background_beach_dawn.mp4";
-            
+            //alert("15-17")
         }
-        
+
         // Malam jam 18 - 24
-        else if(now.getHours() >= 18 && now.getHours() <= 24) {
+        else if (now.getHours() >= 18 && now.getHours() <= 24) {
             backgroundHolder.src = "Videos/background_beach_night.mp4";
+            //alert("18-24")
         }
 
     }
-    changeBackground();
+    
 
     // Set Kilograms choose
     var amount = null;
     var inputAmount = document.getElementById("amountDonation");
     var buttonBefore = null
     function setKg(btnChoose) {
-        if (buttonBefore != null){
+        if (buttonBefore != null) {
             buttonBefore.style.backgroundColor = "rgb(255,255,255)";
             buttonBefore.style.border = ""
         }
         buttonBefore = btnChoose;
-        
+
         amount = btnChoose.getAttribute('data-value');
         btnChoose.style.backgroundColor = "#ffcc5e";
         btnChoose.style.border = "2px solid black"
@@ -267,18 +302,18 @@
     }
 
     //Reset warna button yang tidak dipilih
-    function resetColorButtons(){
+    function resetColorButtons() {
         buttonBefore.style.backgroundColor = "rgb(255,255,255)";
         buttonBefore.style.border = ""
-        amount=null;
+        amount = null;
     }
 
     //Ganti card ke 2
-    function nextDonationCard2(){
-        if (inputAmount.value != ""){
+    function nextDonationCard2() {
+        if (inputAmount.value != "") {
             amount = inputAmount.value;
         }
-        if(amount != null){
+        if (amount != null) {
             document.getElementById("donationCard").style.display = 'none';
             document.getElementById("donationCard2").style.display = 'block';
             var jumlahBayar = parseInt(amount) * 5000;
@@ -286,20 +321,20 @@
                 style: 'currency',
                 currency: 'IDR',
             }).resolvedOptions().maximumFractionDigits;
-            document.getElementById("total").value = "Rp. " +  jumlahBayar.toLocaleString('en-US',{
-                maximumFractionDigits: currencyFractionDigits 
-            }) + ",00 (" + amount + " kg)";
-            
+            document.getElementById("total").value = "Rp. " + jumlahBayar.toLocaleString('en-US', {
+                maximumFractionDigits: currencyFractionDigits
+            }) + ".00 (" + amount + " kg)";
+
             //alert(amount);
         }
-        else{
+        else {
             var errorInputTab = document.getElementById("errorInputKgTab")
             errorInputTab.innerHTML = "Masukkan input terlebih dahulu!";
 
         }
     }
 
-    function previousDonationCard(){
+    function previousDonationCard() {
         document.getElementById("donationCard").style.display = 'block';
         document.getElementById("donationCard2").style.display = 'none';
         resetColorButtons();
@@ -311,4 +346,5 @@
 <!-- Jquery -->
 <script>
 </script>
+
 </html>
