@@ -30,126 +30,134 @@
         
         <a href="#">PROJECT LOCATIONS</a>
     </div>
-  <!-- Sidebar End -->
+    <!-- Sidebar End -->
 
-  <!-- Navbar Button -->
-  <div id="main" class="ml-auto">
-    <button class="openbtn" id="openBtn" onclick="openNav()">☰</button> 
-  </div>
-  <!-- Navbar Button End -->
-  
-  <!-- Background Beach Container -->
-  <div id="background-beach-container" class="container-fluid ">
-
-    <!-- Video Background -->
-    <video autoplay muted loop class="video_beach">
-        <source id="beach_video_background" src="" type="video/mp4"/>
-    </video>
-    <!-- Video Background End -->
-
-    <!-- Total Donation Text -->
-    <h3 class="text-center text-white" id="totalDonation">
-        DONASI TERKUMPUL <br>
-    </h3>
-    <h1 class="count text-center text-white" data-value=2000000000 id="currentProgress">0</h1>
-    <!-- Total Donation Text End -->
-
-  </div>
-  <!-- Background Beach Container End -->
-
-  <!-- Container donasi -->
-  <div class="container-fluid" id="areaDonasi">
-    <div class="row">
-
-        <!-- Left column -->
-        <div class="col-md-4">
-
-        </div>
-        <!-- Left column end -->
-
-        <!-- Middle column -->
-        <div class="col-md-4">
-            <div class="card  mx-auto" id = "donationCard">
-                <!-- Card body -->
-                <div class="card-body">
-                    <h1 class="text-center">GABUNG SAND HELP!</h1>
-                    <hr>
-                    <h4 class="pt-3 text-center">Rp. 5,000.00 = 1 Kg Sampah</h4>
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <button class="" id="btnKg" data-value=10 onclick="setKg(this)">10kg</button>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <button class="" id="btnKg" data-value=20 onclick="setKg(this)">20kg</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <button class="" id="btnKg" data-value=100 onclick="setKg(this)">100kg</button>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <button class="" id="btnKg" data-value=200 onclick="setKg(this)">200kg</button>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="text-center">
-                        <input type="number" id="amountDonation" onclick="resetColorButtons()" placeholder="Jumlah lainnya" name="amountDonation">
-                    </div>
-
-                    <div id="errorInputKgTab" style="display: none;"></div>
-                    <hr>
-                    <div class="text-center">
-                        <button id="btnSubmit" onclick="nextDonationCard2()">
-                           Lanjut
-                        </button>
-                    </div>
-                    
-                </div>
-                <!-- Card body end -->
-            </div>
-            <!-- Card bagian 2 -->
-            <div class="card mx-auto" id = "donationCard2">
-                <div class="card-body">
-                    <h1 class="text-center">Details</h1>
-                    <hr>
-                    <label for="displayName">Nama donatur</label>
-                    <br>
-                    <input type="text" id="displayName" class="inputDetails" required onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
-                    <br>
-                    <label for="message">Pesan</label>
-                    <br>
-                    <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
-                    <br>
-                    <label for="total">Jumlah</label>
-                    <br>
-                    <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()" name="amountDonation" readonly value="Rp. ">
-                    <br>
-                    <label for="paymentOption">Pilih metode pembayaran</label>
-                    <br>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                          <label class="input-group-text" for="inputGroupSelect01">Metode</label>
-                        </div>
-                        <select class="custom-select" id="paymentOption" required>
-                          <option selected>Pilih..</option>
-                          <option value="1">Paypal</option>
-                        </select>
-                    </div>
-                    <br>
-                    <label class="form-check-label" id="anonymousCheckbox">
-                        <input type="checkbox" class="form-check-input" value="">Kirim donasi secara rahasia
-                    </label>
-                    <hr>
-                    <input type="submit" value="Bayar" id="btnSubmit">
-                </div>
-            </div>
-            <!-- Card bagian 2 end -->
-        </div>
-        <!-- Middle Column End -->
+    <!-- Navbar Button -->
+    <div id="main" class="ml-auto">
+        <button class="openbtn" id="openBtn" onclick="openNav()">☰</button> 
     </div>
-  </div>
-  <!-- Container donasi end -->
+    <!-- Navbar Button End -->
   
+    <!-- Background Beach Container -->
+    <div id="background-beach-container" class="container-fluid ">
+
+        <!-- Video Background -->
+        <video autoplay muted loop class="video_beach">
+            <source id="beach_video_background" src="" type="video/mp4"/>
+        </video>
+        <!-- Video Background End -->
+
+        <!-- Total Donation Text -->
+        <h3 class="text-center text-white" id="totalDonation">
+            DONASI TERKUMPUL <br>
+        </h3>
+        <h1 class="count text-center text-white" data-value=2000000000 id="currentProgress">0</h1>
+        <!-- Total Donation Text End -->
+
+    </div>
+    <!-- Background Beach Container End -->
+
+    <!-- Container donasi -->
+    <div class="container-fluid" id="areaDonasi">
+        <div class="row">
+
+            <!-- Left column -->
+            <div class="col-md-4">
+
+            </div>
+            <!-- Left column end -->
+
+            <!-- Middle column -->
+            <div class="col-md-4">
+                <div class="card  mx-auto" id = "donationCard">
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <h1 class="text-center">GABUNG SAND HELP!</h1>
+                        <hr>
+                        <h4 class="pt-3 text-center">Rp. 5,000.00 = 1 Kg Sampah</h4>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <button class="" id="btnKg" data-value=10 onclick="setKg(this)">10kg</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <button class="" id="btnKg" data-value=20 onclick="setKg(this)">20kg</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <button class="" id="btnKg" data-value=100 onclick="setKg(this)">100kg</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <button class="" id="btnKg" data-value=200 onclick="setKg(this)">200kg</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <input type="number" id="amountDonation" onclick="resetColorButtons()" placeholder="Jumlah lainnya" name="amountDonation">
+                        </div>
+
+                        <div id="errorInputKgTab"></div>
+                        <hr>
+                        <div class="text-center">
+                            <button id="btnSubmit" onclick="nextDonationCard2()" style="width: 95%;;">
+                            Lanjut
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <!-- Card body end -->
+                </div>
+                <!-- Card bagian 2 -->
+                <div class="card mx-auto" id = "donationCard2">
+                    <div class="card-body ">
+                        <h1 class="text-center">Details</h1>
+                        <hr>
+                        <label for="displayName">Nama donatur</label>
+                        <br>
+                        <input type="text" id="displayName" class="inputDetails" required onclick="resetColorButtons()" placeholder="Nama donatur" name="amountDonation">
+                        <br>
+                        <label for="message">Pesan</label>
+                        <br>
+                        <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()" placeholder="Pesan saya untuk pantai Indonesia" name="amountDonation">
+                        <br>
+                        <label for="total">Jumlah</label>
+                        <br>
+                        <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()" name="amountDonation" readonly value="Rp. ">
+                        <br>
+                        <label for="paymentOption">Pilih metode pembayaran</label>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Metode</label>
+                            </div>
+                            <select class="custom-select" id="paymentOption" required>
+                            <option selected>Pilih..</option>
+                            <option value="1">Paypal</option>
+                            </select>
+                        </div>
+                        <br>
+                        <label class="form-check-label" id="anonymousCheckbox">
+                            <input type="checkbox" class="form-check-input" value="">Kirim donasi secara rahasia
+                        </label>
+                        <hr>
+                        <input type="submit" value="Bayar" id="btnSubmit" style="width: 100%;">
+                        <div class="text-center mt-3">
+                            <a onclick="previousDonationCard()" id="previousCard">Previous</a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <!-- Card bagian 2 end -->
+            </div>
+            <!-- Middle Column End -->
+        </div>
+    </div>
+    <!-- Container donasi end -->
+
+
+
+    <!-- Footer -->
     <div class="container-fluid text-center footer pt-3 pb-3">
         <div class="">
             <a href="https://www.instagram.com" class="fa fa-instagram link-footer ml-2 mr-2"></a>
@@ -157,6 +165,9 @@
             <a href="https://www.youtube.com" class="fa fa-youtube link-footer ml-2 mr-2"></a>
         </div>
     </div>
+    <!-- Footer End  -->
+
+    
 </body>
 
 <!-- Javascripts -->
@@ -254,12 +265,14 @@
         inputAmount.value = null;
     }
 
+    //Reset warna button yang tidak dipilih
     function resetColorButtons(){
         buttonBefore.style.backgroundColor = "rgb(255,255,255)";
         buttonBefore.style.border = ""
         amount=null;
     }
 
+    //Ganti card ke 2
     function nextDonationCard2(){
         if (inputAmount.value != ""){
             amount = inputAmount.value;
@@ -272,7 +285,7 @@
                 style: 'currency',
                 currency: 'IDR',
             }).resolvedOptions().maximumFractionDigits;
-            document.getElementById("total").value += jumlahBayar.toLocaleString('en-US',{
+            document.getElementById("total").value = "Rp. " +  jumlahBayar.toLocaleString('en-US',{
                 maximumFractionDigits: currencyFractionDigits 
             }) + ",00 (" + amount + " kg)";
             
@@ -280,9 +293,17 @@
         }
         else{
             var errorInputTab = document.getElementById("errorInputKgTab")
-            errorInputTab.style.display = 'block';
             errorInputTab.innerHTML = "Masukkan input terlebih dahulu!";
+
         }
+    }
+
+    function previousDonationCard(){
+        document.getElementById("donationCard").style.display = 'block';
+        document.getElementById("donationCard2").style.display = 'none';
+        resetColorButtons();
+        errorInputTab.innerHTML = "";
+        inputAmount.value = "";
     }
 </script>
 

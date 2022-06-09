@@ -178,23 +178,23 @@ body{
 }
 
 #btnKg:hover{
-    background-color: #c5c5c5;
+    background-color: #e2e2e2;
 }
 
 
 #btnSubmit{
-    width: 95%;;
+    
     margin-top: 15px;
     height: 5.5vh;
     border-radius: 30px;
     border-width: 0.5px;
     border-color: rgba(128, 128, 128, 0.178);
-    background-color: rgba(70,142,221,255);
+    background-color: #ffcc5e;
     font-weight: bold;
 }
 
 #btnSubmit:hover{
-    background-color: rgb(45, 129, 219);
+    background-color: #f3ba3f;
 }
 
 
@@ -303,6 +303,15 @@ body{
     
 }
 
+#previousCard{
+    font-weight: bold;
+}
+
+#previousCard:hover{
+    color: rgba(128, 128, 128, 0.527);
+    text-decoration: underline;
+}
+
 .inputDetails:focus{
     background-color: #ffcc5e;
     border-width: 0.5px;
@@ -322,6 +331,13 @@ body{
     margin: 2px 2px;
     border-radius: 200%;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.192);
+  }
+
+  
+.fa:hover {
+    opacity: 0.7;
+    color: gray;
+    text-decoration: none;
   }
 
   .fa-instagram {
