@@ -78,6 +78,7 @@ body{
     padding: 10px 15px;
     border-radius: 100px;
     border-color: white;
+    z-index: 2;
   }
   
   .openbtn:hover {
@@ -161,15 +162,13 @@ body{
     border-radius: 8px;
     border-width: 0.5px;
     border-color: rgba(128, 128, 128, 0.178);
+    background-color: white;
 }
 
 #btnKg:hover{
     background-color: #c5c5c5;
 }
 
-#btnKg:focus{
-    background-color: #ffcc5e;
-}
 
 #btnSubmit{
     width: 95%;;
@@ -205,6 +204,7 @@ body{
     border-radius: 15px;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.644);
     margin-bottom: 10vh;
+    display: none;
 }
 
 .card-body h1{
@@ -221,7 +221,7 @@ body{
 
 @media only screen and (max-width: 600px) {
     #areaDonasi{
-        margin-top: -3.5vh;
+        margin-top: -4.8vh;
     }
 }
 
@@ -251,6 +251,21 @@ body{
 @media only screen and (max-width: 600px) {
     #amountDonation{
         width: 90%;
+    }
+    
+}
+
+#errorInputKgTab{
+    color: red;
+    font-weight: bold;
+    padding-left: 2.5%;
+    padding-top: 1vh;
+    font-size: small;
+}
+
+@media only screen and (max-width: 600px) {
+    #errorInputKgTab{
+        padding-left: 5%;
     }
     
 }
