@@ -26,10 +26,14 @@ html {
     overflow-x: hidden;
 }
 
+/* Body */
 body {
     font-family: 'ZonaProUltra', sans-serif;
 }
+/* Body end */
 
+
+/* Sidebar */
 .sidebar {
     height: 100%;
     width: 0;
@@ -102,7 +106,6 @@ body {
     padding: 16px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 15px;
@@ -113,6 +116,10 @@ body {
     }
 }
 
+/* Sidebar End */
+
+
+/* Background beach video */
 #background-beach-container {
     padding-top: 100px;
     background-repeat: no-repeat;
@@ -127,6 +134,7 @@ body {
 
 }
 
+/* Big text */
 #currentProgress {
     font-size: 6vw;
     font-weight: bold;
@@ -154,7 +162,10 @@ body {
     }
 
 }
+/* Big text end */
 
+
+/* Video settings */
 .video_beach {
     position: absolute;
     z-index: -1;
@@ -172,7 +183,10 @@ body {
     }
 
 }
+/* Video settings end */
+/* Background Beach Video end */
 
+/* Donation cards area */
 #btnKg {
     width: 100%;
     font-weight: bold;
@@ -295,20 +309,28 @@ body {
     margin-bottom: 3vh;
 }
 
+@media only screen and (max-width: 600px) {
+    .inputDetails {
+        font-size: smaller;
+    }
+}
+
+.inputDetails:focus {
+    background-color: #ffcc5e;
+    border-width: 0.5px;
+    border-color: rgba(128, 128, 128, 0.178);
+}
+
 .labelInputs{
     font-weight: bold;
 }
+
 
 #anonymousCheckbox {
     padding-left: 20px;
 }
 
-@media only screen and (max-width: 600px) {
-    .inputDetails {
-        font-size: smaller;
-    }
 
-}
 
 #previousCard {
     font-weight: bold;
@@ -318,13 +340,51 @@ body {
     color: rgba(128, 128, 128, 0.527);
     text-decoration: underline;
 }
+/* Donation cards area end*/
 
-.inputDetails:focus {
-    background-color: #ffcc5e;
-    border-width: 0.5px;
-    border-color: rgba(128, 128, 128, 0.178);
+/* Leaderboard */
+
+#backgroundSwitch{
+    background-color: grey;
+    margin-bottom: 5vh;
+    width: max-content;
+    border-radius: 100px;
+    display: inline-flex;
+    text-align: center;
+    height: fit-content;
 }
 
+#switchInner{
+   border: coral;
+   margin: -2px;
+   padding-left: 50px;
+   padding-right: 50px;
+   width: 15vw;
+   height: 4vh;
+   background-color: rgba(255, 255, 255, 0);
+   border-radius: 100px;
+   border: 2px solid black;
+   font-weight: bold;
+   top: 50%;
+   font-size: small;
+  
+}
+
+@media only screen and (max-width: 600px) {
+    #switchInner {
+        font-size: smaller;
+        width: 45vw;
+        height: fit-content;
+    }
+    #backgroundSwitch{
+    }
+}
+
+/* Leaderboard end */
+
+
+
+/* Footer */
 .sandhelp{
     font-size: 200%;
     font-weight: bold;
@@ -378,4 +438,7 @@ body {
     position: relative;
     z-index: 2;
 }
+/* Footer End */
+
+
 
