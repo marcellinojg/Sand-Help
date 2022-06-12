@@ -89,97 +89,6 @@ html {
 /* Body end */
 
 
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.767);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 40px;
-}
-
-.sidebar a {
-    padding-left: 30px;
-    padding-top: 30px;
-    text-decoration: none;
-    font-size: 25px;
-    /* text-shadow: 2px 2px rgba(0, 0, 0, 0.603); */
-    font-weight: bold;
-    color: #201f1fd3;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    color: #afaeae;
-}
-
-#name {
-    padding: 6px 8px 0px 32px;
-    font-weight: bold;
-}
-
-#title {
-    padding: 6px 8px 12px 32px;
-    margin-bottom: 12px;
-    color: #d6ac50;
-    font-weight: bold;
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-    padding-top: 10px;
-}
-
-.openbtn {
-    font-size: 20px;
-    right: 15px;
-    position: fixed;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    padding: 10px 15px;
-    border-radius: 100px;
-    border-color: white;
-    z-index: 2;
-}
-
-.openbtn:hover {
-    background-color: rgb(173, 173, 173);
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
-
-    #name{
-        font-size: 5px;
-    }
-    #title{
-        font-size: 5px;
-    }
-}
-
-/* Sidebar End */
 
 
 /* Background beach video */
@@ -187,7 +96,7 @@ html {
     padding-top: 100px;
     background-repeat: no-repeat;
     width: auto;
-    height: 100vh;
+    height: 150vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -203,7 +112,7 @@ html {
     z-index: -1;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     object-fit: cover;
     opacity: 1;
     margin-left: -15px;
@@ -237,7 +146,7 @@ html {
 
 #totalDonation {
     font-family: 'ZonaProUltra', sans-serif;
-    padding-top: 25vh;
+    padding-top: 35vh;
     font-size: 2vw;
     font-weight: bold;
     text-shadow: 3px 3px rgba(0, 0, 0, 0.603);
@@ -245,6 +154,7 @@ html {
 
 @media only screen and (max-width: 600px) {
     #totalDonation {
+        padding-top: 20vh;
         font-size: 6vw;
     }
 
@@ -315,7 +225,7 @@ html {
 
 
 #donationCard {
-    margin-top: 10vh;
+    margin-top: -10vh;
     align-self: center;
     width: 60%;
     border: 0.5px solid rgba(29, 29, 29, 0.281);
@@ -325,7 +235,7 @@ html {
 }
 
 #donationCard2 {
-    margin-top: 10vh;
+    margin-top: -10vh;
     align-self: center;
     width: 60%;
     border: 0.5px solid rgba(29, 29, 29, 0.281);
@@ -338,9 +248,11 @@ html {
 @media only screen and (max-width: 600px) {
     #donationCard {
         width: 100%;
+        margin-top: 0;
     }
     #donationCard2 {
         width: 100%;
+        margin-top: 0;
     }
     #btnKg{
         width: 80%;
@@ -360,7 +272,7 @@ html {
 
 #areaDonasi {
 
-    background-image: linear-gradient(to bottom, #ffcc5e, #534f46);
+    background-image: linear-gradient(to bottom,white , #fdf1d6);
 }
 
 
@@ -516,67 +428,10 @@ option:hover{
     }
     #backgroundSwitch{
     }
+
 }
 
 /* Leaderboard end */
-
-
-
-/* Footer */
-.sandhelp{
-    font-size: 200%;
-    font-weight: bold;
-}
-
-.fa {
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 200%;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.192);
-}
-
-@media only screen and (max-width: 600px) {
-    .fa {
-        padding: 15px;
-        font-size: 20px;
-    }
-
-    .sandhelp{
-        font-size: 120%;
-    }
-}
-
-
-.fa:hover {
-    opacity: 0.7;
-    color: gray;
-    text-decoration: none;
-}
-
-.fa-instagram {
-    background: #125688;
-    color: white;
-}
-
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
-
-.fa-youtube {
-    background: #bb0000;
-    color: white;
-}
-
-.footer {
-    bottom: 0;
-    background-color: #ffcc5e;
-    position: relative;
-    z-index: 2;
-}
-/* Footer End */
 
 
 

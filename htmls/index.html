@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head onload="changeBackground()">
+<head >
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,33 +27,16 @@
 </head>
 
 <div style="overflow-x:hidden;">
-    <body>
+    <body onload="changeBackground()">
 
-        <!-- Sidebar -->
-        <div id="mySidebar" class="sidebar">
-            <h2 id="name" class="pt-3">Glenn Steven Santoso</h2>
-            <h3 id="title">Novice</h3>
-            <hr>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#background-beach-container" class="pt-3">HOME</a>
-            <a href="#areaDonasi">DONATE NOW</a>
-            <a href="#">LEADERBOARD</a>
-            <a href="#">PROJECT LOCATIONS</a>
-        </div>
-        <!-- Sidebar End -->
-
-        <!-- Navbar Button -->
-        <div id="main" class="mr-auto">
-            <button class="openbtn" id="openBtn" onclick="openNav()">☰</button>
-        </div>
-        <!-- Navbar Button End -->
+        <div w3-include-html="/htmls/sidebar.html"></div>
 
         <!-- Background Beach Container -->
         <div id="background-beach-container" class="container-fluid ">
 
             <!-- Video Background -->
             <video autoplay muted loop class="video_beach">
-                <source id="beach_video_background" src="/Videos/background_beach_night.mp4" type="video/mp4" />
+                <source id="beach_video_background" src="/Videos/background_beach_sunny.mp4" type="video/mp4" />
             </video>
             <!-- Video Background End -->
 
@@ -217,25 +200,8 @@
         </div>
         <!-- Container donasi end -->
 
+        <div w3-include-html="/htmls/footer.html"></div>
 
-
-
-
-        <!-- Footer -->
-        <div class="container-fluid text-center footer pt-3 pb-3">
-            <div class="row">
-                <div class="col-md-2 col-sm-2 mt-2">
-                    <h3 class="sandhelp">#SANDHELP</h3>
-                </div>
-                <div class="col-md-8 col-sm-8">
-                    <a href="https://www.instagram.com" class="fa fa-instagram link-footer ml-2 mr-2"></a>
-                    <a href="https://www.twitter.com" class="fa fa-twitter link-footer ml-2 mr-2"></a>
-                    <a href="https://www.youtube.com" class="fa fa-youtube link-footer ml-2 mr-2"></a>
-                </div>
-
-            </div>
-        </div>
-        <!-- Footer End  -->
     </body>
 </div>
 
@@ -289,7 +255,6 @@
     function changeBackground() {
         var now = new Date();
         backgroundHolder = document.getElementById("beach_video_background");
-        console.log = backgroundHolder;
         //Malam jam 0 - 3
         if (now.getHours() >= 0 && now.getHours() <= 3) {
             backgroundHolder.src = "/Videos/background_beach_night.mp4";
@@ -298,7 +263,7 @@
         //Pagi jam 4 - 7
         else if (now.getHours() >= 4 && now.getHours() <= 7) {
             backgroundHolder.src = "/Videos/background_beach_dawn.mp4";
-            //alert("4-7")
+           // alert("4-7")
         }
         // Siang jam 8 - 14
         else if (now.getHours() >= 8 && now.getHours() <= 14) {
@@ -308,13 +273,13 @@
         // Sore jam 15 - 17
         else if (now.getHours() >= 15 && now.getHours() <= 17) {
             backgroundHolder.src = "/Videos/background_beach_dawn.mp4";
-            //alert("15-17")
+           // alert("15-17")
         }
 
         // Malam jam 18 - 24
         else if (now.getHours() >= 18 && now.getHours() <= 24) {
-            backgroundHolder.src = "Videos/background_beach_night.mp4";
-            //alert("18-24")
+            backgroundHolder.src = "/Videos/background_beach_night.mp4";
+           // alert("18-24")
         }
 
     }
