@@ -1,0 +1,121 @@
+html{
+    overflow: hidden;
+
+}
+
+body{
+    font-family: "Poppins",sans-serif;
+    /* background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.582), rgba(0, 0, 0, 0.582)), url(/Images/loginMalam.png);
+    height: 100vh; */
+}
+
+
+
+.login-card{
+    box-shadow: 0px 0px 30px 20px rgba(70, 70, 70, 0.288);
+}
+
+.welcome{
+    padding-top: 100px;
+}
+
+.inputWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputLabel{
+    margin-top: 30px;
+    margin-bottom: -100px;
+}
+
+.inputBox{
+    padding-top: 5px;
+    width: 30vh;
+    border: 0px;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.inputBox:focus{
+    outline: none;
+}
+
+
+.form-group{
+
+}
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.forget-password{
+    padding-top: 15px;
+}
+
+.or{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.or hr{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+}
+
+.or p{
+    position: absolute;
+    top: 3.5px;
+    background: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 10;
+    
+}
+
+
+.carousel{
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+
+    .login-card{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .welcome{
+        font-size: large;
+    }
+
+}
+
+
+@media only screen and (min-width: 1920px) {
+    .carousel{
+        display: block;
+    }
+
+    .login-card{
+        height: 100vh;
+    }
+
+    .welcome{
+        font-size: large;
+    }
+
+}
