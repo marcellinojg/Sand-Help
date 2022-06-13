@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <link rel="icon" type="image/png" href="/Images/favicon.png">
@@ -28,7 +30,7 @@
 
 <div style="overflow-x:hidden;">
 
-    <body>
+    <body onload="changeBackground()">
 
         <div w3-include-html="/htmls/sidebar.html"></div>
 
@@ -37,7 +39,7 @@
 
             <!-- Video Background -->
             <video autoplay muted loop class="video_beach" id="player">
-                <source id="beach_video_background" src="/Videos/background_beach_sunny.mp4" type="video/mp4" />
+                <source id="beach_video_background" src="" type="video/mp4" />
             </video>
             <!-- Video Background End -->
 
@@ -54,7 +56,6 @@
         <!-- Container donasi -->
         <div class="container-fluid" id="areaDonasi">
             <div class="row">
-
                 <!-- Left column -->
                 <div class="col-md-4 col-sm-4">
 
@@ -63,90 +64,98 @@
 
                 <!-- Middle column -->
                 <div class="col-md-4 col-sm-4">
-                    <!-- Card bagian 1 -->
-                    <div class="card mx-auto" id="donationCard">
-                        <!-- Card body -->
-                        <div class="card-body">
-                            <div class="text-center" style="transform: scale(1.6);">
-                                <img src="/Images/banner.png" style="margin-top: -15px;margin-bottom:-15px" width="100%"
-                                    alt="test">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <button class="" id="btnKgLeft" data-value=10 onclick="setKg(this)">10kg</button>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <button class="" id="btnKgRight" data-value=20 onclick="setKg(this)">20kg</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <button class="" id="btnKgLeft" data-value=100 onclick="setKg(this)">100kg</button>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <button class="" id="btnKgRight" data-value=200 onclick="setKg(this)">200kg</button>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="text-center">
-                                <input type="number" id="amountDonation" onclick="resetColorButtons()"
-                                    placeholder="Other amount" name="amountDonation">
-                            </div>
+                    <form action="">
 
-                            <div id="errorInputKgTab"></div>
-                            <hr style="border: solid 2px #bc8033">
-                            <div class="text-center">
-                                <button id="btnSubmit" onclick="nextDonationCard2()" style="width: 95%;;">
-                                    Next
-                                </button>
+
+                        <!-- Card bagian 1 -->
+                        <div class="card mx-auto" id="donationCard">
+                            <!-- Card body -->
+                            <div class="card-body">
+                                <div class="text-center" style="transform: scale(1.6);">
+                                    <img src="/Images/banner.png" style="margin-top: -15px;margin-bottom:-15px"
+                                        width="100%" alt="test">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <button class="" id="btnKgLeft" data-value=10
+                                            onclick="setKg(this)">10kg</button>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <button class="" id="btnKgRight" data-value=20
+                                            onclick="setKg(this)">20kg</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <button class="" id="btnKgLeft" data-value=100
+                                            onclick="setKg(this)">100kg</button>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <button class="" id="btnKgRight" data-value=200
+                                            onclick="setKg(this)">200kg</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                    <input type="number" id="amountDonation" onclick="resetColorButtons()"
+                                        placeholder="Other amount" name="amountDonation">
+                                </div>
+
+                                <div id="errorInputKgTab"></div>
+                                <hr style="border: solid 2px #bc8033">
+                                <div class="text-center">
+                                    <button id="btnSubmit" onclick="" style="width: 95%;;">
+                                        Next
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Card body end -->
+                        </div>
+                        <!-- Card bagian 1 end -->
+
+                        <!-- Card bagian 2 -->
+                        <div class="card mx-auto" id="donationCard2" style="display:none;">
+                            <div class="card-body">
+                                <h1 class="text-center" style="color:#dbbe8b ;text-shadow:1px 1px rgba(0, 0, 0, 0.521)">
+                                    Details
+                                </h1>
+                                <hr>
+                                <label for="displayName" class="labelInputs">Name</label>
+                                <br>
+                                <input type="text" id="displayName" class="inputDetails" required
+                                    onclick="resetColorButtons()" placeholder="Name" name="amountDonation">
+                                <br>
+                                <label for="message" class="labelInputs">Message</label>
+                                <br>
+                                <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()"
+                                    placeholder="Message for Indonesia's Beach" name="amountDonation">
+                                <br>
+                                <label for="total" class="labelInputs">Total</label>
+                                <br>
+                                <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()"
+                                    name="amountDonation" readonly value="Rp. ">
+                                <br>
+                                <label for="paymentOption " class="labelInputs">Choose payment method</label>
+                                <br>
+                                <div class="input-group">
+                                    <select class="custom-select" id="paymentOption" required>
+                                        <option selected>Choose payment..</option>
+                                        <option value="1" style="font-weight: bold;">Paypal</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <label class="form-check-label" class="labelInputs" id="anonymousCheckbox">
+                                    <input type="checkbox" class="form-check-input checkbox" value="">
+                                    <div style="font-weight: bold;color:#d8b16f;">Send anonymously</div>
+                                </label>
+                                <hr>
+                                <input type="submit" value="Pay" id="btnSubmit" style="width: 100%;">
+                                <div class="text-center mt-3">
+                                    <a onclick="" id="previousCard">Back</a>
+                                </div>
                             </div>
                         </div>
-                        <!-- Card body end -->
-                    </div>
-                    <!-- Card bagian 1 end -->
-
-                    <!-- Card bagian 2 -->
-                    <div class="card mx-auto" id="donationCard2" style="display:none;">
-                        <div class="card-body">
-                            <h1 class="text-center" style="color:#dbbe8b ;text-shadow:1px 1px rgba(0, 0, 0, 0.521)">
-                                Details
-                            </h1>
-                            <hr>
-                            <label for="displayName" class="labelInputs">Name</label>
-                            <br>
-                            <input type="text" id="displayName" class="inputDetails" required
-                                onclick="resetColorButtons()" placeholder="Name" name="amountDonation">
-                            <br>
-                            <label for="message" class="labelInputs">Message</label>
-                            <br>
-                            <input type="text" id="displayName" class="inputDetails" onclick="resetColorButtons()"
-                                placeholder="Message for Indonesia's Beach" name="amountDonation">
-                            <br>
-                            <label for="total" class="labelInputs">Total</label>
-                            <br>
-                            <input type="text" id="total" class="inputDetails" onclick="resetColorButtons()"
-                                name="amountDonation" readonly value="Rp. ">
-                            <br>
-                            <label for="paymentOption " class="labelInputs">Choose payment method</label>
-                            <br>
-                            <div class="input-group">
-                                <select class="custom-select" id="paymentOption" required>
-                                    <option selected>Choose payment..</option>
-                                    <option value="1" style="font-weight: bold;">Paypal</option>
-                                </select>
-                            </div>
-                            <br>
-                            <label class="form-check-label" class="labelInputs" id="anonymousCheckbox">
-                                <input type="checkbox" class="form-check-input checkbox" value="">
-                                <div style="font-weight: bold;color:#d8b16f;">Send anonymously</div>
-                            </label>
-                            <hr>
-                            <input type="submit" value="Pay" id="btnSubmit" style="width: 100%;">
-                            <div class="text-center mt-3">
-                                <a onclick="previousDonationCard()" id="previousCard">Back</a>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                     <!-- Card bagian 2 end -->
                 </div>
                 <!-- Middle Column End -->
@@ -243,37 +252,22 @@
     //Function Ganti background sesuai jam
     function changeBackground() {
         var now = new Date();
-        backgroundHolder = document.getElementById("beach_video_background");
-        //Malam jam 0 - 3
-        if (now.getHours() >= 0 && now.getHours() <= 3) {
-            //backgroundHolder.src = "/Videos/background_beach_night.mp4";
-            location.replace("index_malam.html");
-            //alert("0-3")
+        hour = now.getHours();
+        // hour = 18;
+        // x = 1;
+        if (hour >= 0 && hour <= 3) {
+            document.querySelector('#player').setAttribute("src", "/Videos/background_beach_night.mp4");
+        } else if (hour >= 4 && hour <= 7) {
+            document.querySelector('#player').setAttribute("src", "/Videos/background_beach_dawn.mp4");
         }
-        //Pagi jam 4 - 7
-        else if (now.getHours() >= 4 && now.getHours() <= 7) {
-            //backgroundHolder.src = "/Videos/background_beach_dawn.mp4";
-            location.replace("index_sore_subuh.html");
-            // alert("4-7")
+        else if (hour >= 8 && hour <= 14) {
+            document.querySelector('#player').setAttribute("src", "/Videos/background_beach_sunny.mp4");
         }
-        // Siang jam 8 - 14
-        else if (now.getHours() >= 8 && now.getHours() <= 14) {
-            //backgroundHolder.src = "/Videos/background_beach_sunny.mp4";
-            location.replace("index_siang.html");
-            //alert("8-14")
+        else if (hour >= 15 && hour <= 17) {
+            document.querySelector('#player').setAttribute("src", "/Videos/background_beach_dawn.mp4");
         }
-        // Sore jam 15 - 17
-        else if (now.getHours() >= 15 && now.getHours() <= 17) {
-            //backgroundHolder.src = "/Videos/background_beach_dawn.mp4";
-            location.replace("index_sore_subuh.html");
-            // alert("15-17")
-        }
-
-        // Malam jam 18 - 24
-        else if (now.getHours() >= 18 && now.getHours() <= 24) {
-            //backgroundHolder.src = "/Videos/background_beach_night.mp4";
-            location.replace("index_malam.html");
-            // alert("18-24")
+        else if (hour >= 18 && hour <= 24) {
+            document.querySelector('#player').setAttribute("src", "/Videos/background_beach_night.mp4");
         }
     }
     //changeBackground();
@@ -309,43 +303,6 @@
         amount = null;
     }
 
-    //Ganti card ke 2
-    function nextDonationCard2() {
-        if (inputAmount.value != "") {
-            amount = inputAmount.value;
-        }
-        if (amount != null) {
-            document.getElementById("donationCard").style.display = 'none';
-            document.getElementById("donationCard2").style.display = 'block';
-            var jumlahBayar = parseInt(amount) * 5000;
-            const currencyFractionDigits = new Intl.NumberFormat('de-DE', {
-                style: 'currency',
-                currency: 'IDR',
-            }).resolvedOptions().maximumFractionDigits;
-            document.getElementById("total").value = "Rp. " + jumlahBayar.toLocaleString('en-US', {
-                maximumFractionDigits: currencyFractionDigits
-            }) + ".00 (" + amount + " kg)";
-
-            //alert(amount);
-        }
-        else {
-            var errorInputTab = document.getElementById("errorInputKgTab");
-            errorInputTab.innerHTML = "Masukkan input terlebih dahulu!";
-
-        }
-    }
-
-    function previousDonationCard() {
-        document.getElementById("donationCard").style.display = 'block';
-        document.getElementById("donationCard2").style.display = 'none';
-        inputAmount.value = "";
-        buttonBefore.style.backgroundColor = "#fceee1";
-        buttonBefore.style.border = "0.5px solid #e9cea0";
-        buttonBefore.style.color = "#e2ac4d"
-        amount = null;
-        document.getElementById("errorInputKgTab").innerHTML = "";
-    }
-
     var buttonRecent = document.getElementById("switchInner1");
     var buttonMost = document.getElementById("switchInner2");
 
@@ -368,10 +325,47 @@
     }
 
     includeHTML();
+
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            if (inputAmount.value != "") {
+                amount = inputAmount.value;
+            }
+            if (amount != null) {
+                $("#donationCard").hide();
+                $("#donationCard2").show();
+                var jumlahBayar = parseInt(amount) * 5000;
+                const currencyFractionDigits = new Intl.NumberFormat('de-DE', {
+                    style: 'currency',
+                    currency: 'IDR',
+                }).resolvedOptions().maximumFractionDigits;
+                document.getElementById("total").value = "Rp. " + jumlahBayar.toLocaleString('en-US', {
+                    maximumFractionDigits: currencyFractionDigits
+                }) + ".00 (" + amount + " kg)";
+            }
+            else {
+                var errorInputTab = document.getElementById("errorInputKgTab");
+                errorInputTab.innerHTML = "Masukkan input terlebih dahulu!";
+            }
+
+        });
+        $("#previousCard").click(function () {
+            $("#donationCard2").hide();
+            $("#donationCard").show();
+            inputAmount.value = "";
+            buttonBefore.style.backgroundColor = "#fceee1";
+            buttonBefore.style.border = "0.5px solid #e9cea0";
+            buttonBefore.style.color = "#e2ac4d"
+            amount = null;
+            document.getElementById("errorInputKgTab").innerHTML = "";
+        });
+    });
 </script>
+
 
 <!-- Jquery -->
 <script>
+
 </script>
 
 </html>

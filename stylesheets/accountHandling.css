@@ -89,6 +89,13 @@ html{
     margin-top:8vh;
     width: 80%;
     margin-left: 10%;
+    
+}
+
+.forgot-card{
+    margin-top:6vh;
+    width: 80%;
+    margin-left: 10%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -109,7 +116,7 @@ body{
 }
 
 .banner{
-    transform: scale(1.0);
+    transform: scale(0.8);
 }
 
 .inputWrapper{
@@ -250,7 +257,7 @@ a:hover{
     }
 
     .banner{
-        transform: scale(1.8);
+        transform: scale(0.8);
     }
 
     .sign-in, .next,.register, .reset, .verify{
