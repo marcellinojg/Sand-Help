@@ -25,19 +25,8 @@
 }
 
 .sidebar a:hover {
-    color: #afaeae;
-}
-
-#name {
-    padding: 6px 8px 0px 32px;
-    font-weight: bold;
-}
-
-#title {
-    padding: 6px 8px 12px 32px;
-    margin-bottom: 12px;
-    color: #d6ac50;
-    font-weight: bold;
+    color: #201f1fd3;
+    text-decoration: none;
 }
 
 .sidebar .closebtn {
@@ -47,6 +36,10 @@
     font-size: 36px;
     margin-left: 50px;
     padding-top: 10px;
+}
+
+.bar:hover{
+    background-color:rgba(255, 255, 255, 0.767)
 }
 
 .openbtn {
@@ -71,6 +64,12 @@
     padding: 16px;
 }
 
+
+.profile{
+    bottom: 0;
+    position: absolute;
+}
+
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 15px;
@@ -78,13 +77,6 @@
 
     .sidebar a {
         font-size: 18px;
-    }
-
-    #name{
-        font-size: 5px;
-    }
-    #title{
-        font-size: 5px;
     }
 }
 

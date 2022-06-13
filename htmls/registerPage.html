@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
-    <link rel="stylesheet" href="/stylesheets/registerPage.css">
+    <link rel="stylesheet" href="/stylesheets/accountHandling.css">
     <link rel="icon" type="image/png" href="/Images/favicon.png">
 
     <script src="/Scripts/includeHtml.js"></script>
@@ -57,7 +57,7 @@
                     <form action="" method="POST" class="form-group">
                         <div class="inputWrapper1 text-left" id="inputWrapper1">
                             <div class="form-group">
-                                <label for="nama_lengkap" class="inputLabel font-weight-bold">Nama lengkap</label> <br>
+                                <label for="nama_lengkap" class="inputLabel font-weight-bold">Full Name</label> <br>
                                 <input type="text" name="full_name" id="" placeholder="Type your full name" class="inputBox">
                                 <br>
                                 <label for="email" class="inputLabel font-weight-bold pt-2">Email</label><br>
@@ -84,7 +84,7 @@
                                     <input type="submit" name="" id="" class="register" value="Register now">
                                 </div>
                                 <div class="text-center pt-3">
-                                    <a href="" class="text-center" style="color: #c28400">Previous</a>
+                                    <a onclick="previous()" class="text-center" style="color: #c28400">Previous</a>
                                 </div>
                                 
                             </div>
@@ -108,7 +108,6 @@
             </div>
 
         </div>
-       
     </body>
 </div>
 <script>
@@ -117,6 +116,11 @@
     function next(){
         page1.style.display = "none";
         page2.style.display = "flex";
+    }
+
+    function previous(){
+        page2.style.display = "none";
+        page1.style.display = "flex";
     }
 </script>
     
