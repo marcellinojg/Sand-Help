@@ -42,11 +42,17 @@ html{
     z-index: 0;
     top: 0%;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.527);
+    background-color: rgba(70, 70, 70, 0.295);
+    
 }
 
 
-
+#form_input{
+    /* background-color: rgba(255, 255, 255, 0.979); */
+    background:linear-gradient(to bottom, #fae4bf, white);
+    border-radius:10px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.178);
+}
 
 
 
@@ -86,14 +92,12 @@ html{
 
 
 .login-card{
-    margin-top:8vh;
     width: 80%;
     margin-left: 10%;
-    
+    transform: scale(0.9);
 }
 
 .forgot-card{
-    margin-top:6vh;
     width: 80%;
     margin-left: 10%;
 }
@@ -103,6 +107,12 @@ html{
         padding-left: 7.5vw;
         margin-top: 0px;
         margin-left: -15px
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    html{
+        overflow: hidden;
     }
 }
 
@@ -193,7 +203,7 @@ a:hover{
 .or p{
     position: absolute;
     top: 3.5px;
-    background-color: rgba(255, 255, 255, 0.979);
+    background:linear-gradient(to bottom, #fff8eb,#fff6f6);
     padding-left: 20px;
     padding-right: 20px;
     z-index: 10;
@@ -208,13 +218,13 @@ a:hover{
     height: 6vh;
     border-radius: 30px;
     border: 0.5px solid #e9cea0;
-    background-color: #dcbe89;
+    background-color: #c28400;
     font-weight: bold;
     font-size: large;
 }
 
 .sign-in:hover, .next:hover, .register:hover, .reset:hover,.verify:hover{
-    background-color:#c28500a2
+    background-color: #dab77b;
 }
 
 .google{
@@ -224,7 +234,7 @@ a:hover{
     height: 6vh;
     border-radius: 30px;
     border: 0.5px solid #e9cea0;
-    background-color: #dcbe89;
+    background-color: #c28400;
     font-weight: bold;
     font-size: medium;
 }
