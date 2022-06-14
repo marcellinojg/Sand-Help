@@ -21,15 +21,20 @@
     <link rel="stylesheet" href="/stylesheets/accountHandling.css">
     <link rel="icon" type="image/png" href="/Images/favicon.png">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <script src="/Scripts/includeHtml.js"></script>
     <script src="/Scripts/changeBackground.js"></script>
+    <script src="/Scripts/popup.js"></script>
+    <script></script>
 
     <title>SandHelp-Login</title>
 </head>
 
 <div style="overflow-x:hidden">
 
-    <body class="" style="" onload="changeBackground()">
+    <body class="" style="" onload="changeBackground('no_logo'); includeHTML();">
+        <div w3-include-html="/htmls/popup.html" style=""></div>
         <div class="video-container">
             <!-- Video Background -->
             <video autoplay muted loop class="video_beach" id="player">
@@ -58,7 +63,7 @@
                     </h3>
                     <div class="inputWrapper text-left">
                         <form action="" class="form-group" method="POST">
-                            <label for="email" class="inputLabel font-weight-bold">Email</label> <br>
+                            <label for="email" class="inputLabel font-weight-bold" onclick="showPopup('Please verify your email')">Email</label> <br>
                             <input type="email" name="" id="" placeholder="Type your email" class="inputBox">
                             <br>
                             <label for="password" class="inputLabel font-weight-bold pt-2">Password</label><br>
@@ -92,5 +97,8 @@
        
     </body>
 </div>
+
+<script>
+</script>
 
 </html>

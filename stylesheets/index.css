@@ -431,6 +431,75 @@ option:hover{
     font-size: small;
  }
 
+.search{
+    background-color: white;
+    width: max-content;
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.247);
+}
+
+
+.search input{
+    background-color: white;
+    border: none;
+}
+
+.search input:focus{
+    background:white;
+    color: #c28400;
+}
+
+
+input{
+    border: none;
+    border-radius: 100px;
+    background: none;
+    width: 24vw;
+    padding-left: 15px;
+    height: 35px;
+}
+.search button{
+    padding-right: 15px;
+    margin-right: 0.1vw;
+    border-radius: 100px;
+    border: none;
+    background:none;
+}
+
+.container-leaderboard{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.247);
+    border-radius: 10px;
+    width: 40vw;
+    margin-top: 8%;
+}
+
+#badge{
+    position: relative;
+    height: 100px;
+    margin-left:-90px;
+    
+}
+
+.block-text-leaderboard{
+    margin-top: 23px;
+    position: absolute;
+}
+
+#nama-leaderboard{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#pesan-leaderboard{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.timestamp{
+    font-size: 10px;
+}
+
+
 @media only screen and (max-width: 600px) {
     #switchInner1 {
         font-size: smaller;
@@ -443,6 +512,35 @@ option:hover{
         height: fit-content;
     }
     #backgroundSwitch{
+    }
+
+    .search input{
+        width: 65vw;
+    }
+
+    #badge{
+        height: 50px;
+        margin-left: 0%;
+        margin-top: -20px;
+    }
+
+    .container-leaderboard{
+        width: 95vw;
+        height: fit-content
+    }
+
+    .block-text-leaderboard{
+        position: relative;
+    }
+
+    #nama-leaderboard{
+        font-size: smaller;
+
+    }
+    
+    #pesan-leaderboard{
+        font-size: smaller;
+
     }
 
 }
