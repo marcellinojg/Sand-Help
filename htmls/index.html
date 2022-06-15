@@ -132,7 +132,7 @@
                                     <br>
                                     <label for="message" class="labelInputs">Message</label>
                                     <br>
-                                    <input type="text" id="displayName" class="inputDetails"
+                                    <input type="text" id="displayName" maxlength="40" class="inputDetails"
                                         onclick="resetColorButtons()" placeholder="Message for Indonesia's Beach"
                                         name="amountDonation">
                                     <br>
@@ -160,7 +160,7 @@
                                     <hr>
                                     <input type="submit" value="Pay" id="btnSubmit" style="width: 100%;">
                                     <div class="text-center mt-3">
-                                        <a onclick="" id="previousCard">Back</a>
+                                        <a onclick="" id="previousCard">Previous</a>
                                     </div>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@
 
                         </div>
                         <div class="col-md-6 col-sm-8 mx-auto text-center pt-5 mt-5 pb-5 mb-5">
-                            <h1 style="font-weight: bold; text-align:center;">LEADERBOARD</h1>
+                            <img src="/Images/leaderboard_title.png" width="100%" style="transform: scale(1.0);" alt="">
                             <div class="" id="backgroundSwitch">
                                 <button id="switchInner1" onclick="switchLeaderboardRecent()">
                                     RECENT TRASH
@@ -196,57 +196,75 @@
                             </div>
                             <br>
                             <div style="display: flex; justify-content:center; align-items:center">
-                                <div class="search">
+                                <div class="search mb-3">
                                     <input type="text" placeholder="Search.." name="search">
-                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <button type="submit"><img src="/Images/search_icon.png" width="25px" alt=""></button>
                                 </div>
                             </div>
                             <div style="display: flex; justify-content:center; align-items:center">
-                                <div class="leaderboard-body" id="leaderboard-body">
-                                    <div class="container-leaderboard bg-light text-left">
-
-                                        <div class="row">
-                                            <div class="col-1">
-                                                <img src="/Images/TIER 1.png" alt="" id="badge">
-                                            </div>
-                                            <div class="col-8">
-                                                <h2 id="nama-leaderboard" style="display: inline-block;">
-                                                    Glenn Steven Santoso 
-                                                </h2>
-                                                <h5 id="pesan-leaderboard">
-                                                    Long live Indonesian Beach !
-                                                </h5>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="amount-leaderboard">
-                                                    <span>10</span> Kg
-                                                </div> 
-                                                 <p class="timestamp">
-                                                    6/14/2022, 7:49:55 AM
-                                                 </p>
-                                            </div>
+                                <div class="leaderboard-body " id="leaderboard-body">
+                                    <div class="container-leaderboard mt-4 bg-light text-left">
+                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                        <div class="block-text-leaderboard" style="">
+                                            <h3 id = "nama-leaderboard">Marcellino Julian Gozal</h5>
+                                            <h5 id="pesan-leaderboard">Indonesia beach beach beach beach beach</h6>
                                         </div>
-                                        <div style="display: inline-block;" class="block-text-leaderboard">
-
-                                            
+                                        <div class="block-text-right-leaderboard">
+                                            <h3 class="leaderboard-amount">
+                                                <div id="leaderboard-amount" class="text-center">
+                                                    1000 kg
+                                                </div>
+                                            </h3>
                                         </div>
-
-                                        
+                                    </div>
+                                    <div class="container-leaderboard mt-4 bg-light text-left">
+                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                        <div class="block-text-leaderboard" style="">
+                                            <h3 id = "nama-leaderboard">Glenn Steven Santoso</h5>
+                                            <h5 id="pesan-leaderboard">Long live Indonesia's Beach !</h6>
+                                        </div>
+                                        <div class="block-text-right-leaderboard">
+                                            <h3 class="leaderboard-amount">
+                                                <div id="leaderboard-amount" class="text-center">
+                                                    10 kg
+                                                </div>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                    <div class="container-leaderboard mt-4 bg-light text-left">
+                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                        <div class="block-text-leaderboard" style="">
+                                            <h3 id = "nama-leaderboard">Yefta Nathaniel Watson</h5>
+                                            <h5 id="pesan-leaderboard"></h6>
+                                        </div>
+                                        <div class="block-text-right-leaderboard">
+                                            <h3 class="leaderboard-amount">
+                                                <div id="leaderboard-amount" class="text-center">
+                                                    100 kg
+                                                </div>
+                                            </h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                         <div class="col-md-3 col-sm-2">
 
                         </div>
-
                     </div>
+                    <div class="text-center">
+                        <a href="#donationCard"><button id="btnSubmit" class="pl-5 pr-5"> Save the beach yourself</button></a>
+                    </div>
+                    
                 </div>
             </div>
+            <!-- <div class="bottom_background" style="display: inline-block;">
+                <img src="/Images/bottom_background.png" alt="" width="100%">
+            </div> -->
         </div>
+
+        <div w3-include-html="/htmls/footer.html"></div>
+        
     </body>
 </div>
 

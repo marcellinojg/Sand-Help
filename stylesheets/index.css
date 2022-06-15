@@ -219,9 +219,6 @@ html {
 }
 
 
-#btnKg:hover {
-    background-color: #dab77b;
-}
 
 
 #btnSubmit {
@@ -230,9 +227,10 @@ html {
     height: 5.5vh;
     border-radius: 30px;
     border: 0.5px solid #e9cea0;
-    background-color: #dcbe89;
+    background-color: #c28400;
     font-weight: bold;
     font-size: large;
+    
 }
 
 #btnSubmit:hover {
@@ -242,6 +240,7 @@ html {
 
 
 #donationCard {
+    transform: scale(1.2);
     margin-top: -10vh;
     align-self: center;
     width: 60%;
@@ -252,6 +251,7 @@ html {
 }
 
 #donationCard2 {
+    transform: scale(1.2);
     margin-top: -10vh;
     align-self: center;
     width: 60%;
@@ -264,12 +264,14 @@ html {
 
 @media only screen and (max-width: 600px) {
     #donationCard {
+        transform: scale(1.0);
         width: 100%;
-        margin-top: 0;
+        margin-top: -10vh;
     }
     #donationCard2 {
+        transform: scale(1.0);
         width: 100%;
-        margin-top: 0;
+        margin-top: -10vh;
     }
     #btnKg{
         width: 80%;
@@ -408,8 +410,8 @@ option:hover{
     border: none;
     padding-left: 50px;
     padding-right: 50px;
-    width: 13vw;
-    height: 4vh;
+    width: 15vw;
+    height: 5vh;
     background-color: rgb(255, 255, 255);
     border-radius: 100px;
     font-weight: bold;
@@ -422,8 +424,8 @@ option:hover{
     border: none;
     padding-left: 50px;
     padding-right: 50px;
-    width: 13vw;
-    height: 4vh;
+    width: 15vw;
+    height: 5vh;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 100px;
     font-weight: bold;
@@ -432,6 +434,7 @@ option:hover{
  }
 
 .search{
+    
     background-color: white;
     width: max-content;
     border-radius: 100px;
@@ -440,23 +443,20 @@ option:hover{
 
 
 .search input{
+    height: 6vh;
     background-color: white;
     border: none;
+    border: none;
+    border-radius: 100px;
+    background: none;
+    width: 28vw;
+    padding-left: 15px;
+
 }
 
 .search input:focus{
     background:white;
     color: #c28400;
-}
-
-
-input{
-    border: none;
-    border-radius: 100px;
-    background: none;
-    width: 24vw;
-    padding-left: 15px;
-    height: 35px;
 }
 .search button{
     padding-right: 15px;
@@ -471,32 +471,62 @@ input{
     border-radius: 10px;
     width: 40vw;
     margin-top: 8%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 #badge{
-    position: relative;
-    height: 100px;
-    margin-left:-90px;
-    
+    width: 100px;
+    margin-left: -50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .block-text-leaderboard{
+    display: inline-block;
     margin-top: 23px;
-    position: absolute;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    width: 25vw;
+}
+
+.block-text-right-leaderboard{
+    background-color: #c28400;
+    position:absolute;
+    display: inline;
+    width: max-content;
+    vertical-align: middle;
+    padding: 10px;
+    padding-bottom: 0;
+    right: 8vw;
+    border-radius: 100px;
+    width: 6vw;
+}
+
+.leaderboard-amount{
+    font-size: large;
+    color: white;
+    font-weight: bold;
 }
 
 #nama-leaderboard{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
 #pesan-leaderboard{
-    font-size: 15px;
+    font-size: 20px;
     font-weight: lighter;
 }
 
 .timestamp{
     font-size: 10px;
+}
+
+.bottom_background{
+    bottom: 0;
 }
 
 
@@ -519,30 +549,48 @@ input{
     }
 
     #badge{
-        height: 50px;
-        margin-left: 0%;
-        margin-top: -20px;
+        margin-left: 15px;
+        width: 50px;
+    }
+
+
+    .leaderboard-body{
+       
     }
 
     .container-leaderboard{
+        
         width: 95vw;
-        height: fit-content
+        height: 10vh;
     }
 
     .block-text-leaderboard{
+        
+        padding-left: 20px;
+        margin-bottom: 15px;
         position: relative;
+        width: 50vw;
     }
 
+    .block-text-right-leaderboard{
+        width: 20vw;
+        right: 3vw;
+    }
+
+
     #nama-leaderboard{
-        font-size: smaller;
+        font-size: small;
 
     }
     
     #pesan-leaderboard{
-        font-size: smaller;
+        font-size: small;
 
     }
 
+    .leaderboard-amount{
+        font-size: smaller;
+    }
 }
 
 /* Leaderboard end */
