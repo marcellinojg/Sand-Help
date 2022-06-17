@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <style>
+        .map {
+            height: 600px;
+            width: 50%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <title>OpenLayers example</title>
+</head>
+
+<body>
+    <h2>My Map</h2>
+    <div id="map" class="map"></div>
+    <script type="text/javascript">
+        var map = new ol.Map({
+            controls: [
+            ],
+
+            interactions: [
+            ],
+
+            target: 'map',
+
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+
+            view: new ol.View({
+                center: ol.proj.fromLonLat([118.015776, -2.6000285]),
+                zoom: 5
+            })
+
+        });
+
+        var markerGeometry = new ol.geom.Point(ol.proj.transform([115.168640, -8.719266], 'EPSG:4326', 'EPSG:4326'));
+        var markerFeature = new ol.Feature({
+            geometry: markerGeometry
+        });
+
+        var markerStyle = new ol.style.Icon(({
+            src: 'https://github.com/openlayers/openlayers/blob/v3.20.1/examples/resources/logo-70x70.png'
+        }));
+
+        markerFeature.setStyle(new ol.style.Style({
+            image: markerStyle,
+        }));
+
+        var vectorSource = new ol.source.Vector({
+            features: [markerFeature]
+        });
+
+        var markerLayer = new ol.layer.Vector({
+            title: "RoutePoint",
+            visible: true,
+            source: vectorSource
+        });
+
+        map.addLayer(markerLayer);
+    </script>
+</body>
+
+</html>

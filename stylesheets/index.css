@@ -10,6 +10,8 @@
 }
 
 
+
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -240,7 +242,7 @@ html {
 
 
 #donationCard {
-    transform: scale(1.2);
+    transform: scale(1.0);
     margin-top: -10vh;
     align-self: center;
     width: 60%;
@@ -251,7 +253,7 @@ html {
 }
 
 #donationCard2 {
-    transform: scale(1.2);
+    transform: scale(1.0);
     margin-top: -10vh;
     align-self: center;
     width: 60%;
@@ -290,16 +292,16 @@ html {
 }
 
 #areaDonasi {
+    background-image: url(/Images/bottom_background.png),linear-gradient(to bottom,white , #fdf1d6);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
 
-    background-image: linear-gradient(to bottom,white , #fdf1d6);
+    z-index: 1;
+
 }
 
-
-
-@media only screen and (max-width: 600px) {
-    #areaDonasi {
-
-    }
+#map-image{
 }
 
 
@@ -468,6 +470,7 @@ option:hover{
 
 .container-leaderboard{
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.247);
+    background-image: linear-gradient(to bottom,white , #fdf1d6);
     border-radius: 10px;
     width: 40vw;
     margin-top: 8%;
@@ -477,8 +480,8 @@ option:hover{
 }
 
 #badge{
-    width: 100px;
-    margin-left: -50px;
+    width: 70px;
+    margin-left: -35px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -496,7 +499,6 @@ option:hover{
     background-color: #c28400;
     position:absolute;
     display: inline;
-    width: max-content;
     vertical-align: middle;
     padding: 10px;
     padding-bottom: 0;
@@ -512,12 +514,12 @@ option:hover{
 }
 
 #nama-leaderboard{
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 #pesan-leaderboard{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: lighter;
 }
 
@@ -525,8 +527,36 @@ option:hover{
     font-size: 10px;
 }
 
-.bottom_background{
-    bottom: 0;
+#bottom_background{
+    height: auto;
+    width: 100vw;
+}
+
+.separator{
+    margin-top: -1vh;
+    width: 100vw;
+    height: 10vh;
+    background-color: #e0c796;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 0;
+    margin-bottom: 10vh;
+}
+
+.location-container{
+    background-color: #c28400;
+}
+
+#map-image{
+    width: 90vw;
+    margin-bottom: 10vh;
+}
+
+.project-location-title{
+    font-weight: bold;
+    font-family: 'ZonaProUltra', sans-serif; 
+    padding-top:15vh;
+    padding-bottom: 10vh;
 }
 
 
@@ -555,7 +585,7 @@ option:hover{
 
 
     .leaderboard-body{
-       
+       margin-bottom: 0px;
     }
 
     .container-leaderboard{
@@ -590,6 +620,10 @@ option:hover{
 
     .leaderboard-amount{
         font-size: smaller;
+    }
+
+    #areaDonasi{
+        background-size: 200vh;
     }
 }
 

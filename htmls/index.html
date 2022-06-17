@@ -26,8 +26,19 @@
 
     <link rel="stylesheet" href="/stylesheets/index.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js">
+
+    <script src="/node_modules/wowjs/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
     <script src="/Scripts/includeHtml.js"></script>
     <script src="/Scripts/popup.js"></script>
+    <script src="/Scripts/sidebar.js"></script>
+    <script src="/Scripts/preloader.js"></script>
 
     <title>SAND HELP</title>
 </head>
@@ -38,10 +49,11 @@
 
         <div w3-include-html="/htmls/sidebar.html"></div>
 
+
         <div class="container-full">
 
             <!-- Background Beach Container -->
-            <div id="background-beach-container" class="container-fluid ">
+            <div id="background-beach-container" class="container-fluid wow fadeIn">
 
                 <!-- Video Background -->
                 <video autoplay muted loop class="video_beach" id="player">
@@ -59,8 +71,8 @@
             </div>
             <!-- Background Beach Container End -->
 
-            <!-- Container donasi -->
-            <div class="container-fluid" id="areaDonasi">
+            <!-- Container donasi & Leaderboard -->
+            <div class="container-fluid bg-dark" id="areaDonasi">
                 <div class="row">
                     <!-- Left column -->
                     <div class="col-md-4 col-sm-4">
@@ -69,10 +81,10 @@
                     <!-- Left column end -->
 
                     <!-- Middle column -->
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-4 col-sm-4 wow fadeInDown">
                         <form action="" method="POST">
                             <!-- Card bagian 1 -->
-                            <div class="card mx-auto" id="donationCard">
+                            <div class="animate_animated card mx-auto " id="donationCard">
                                 <!-- Card body -->
                                 <div class="card-body">
                                     <div class="text-center" style="transform: scale(1.6);">
@@ -175,17 +187,22 @@
                     </div>
                     <!-- Left column end -->
                 </div>
-                <!-- Container donasi end -->
 
 
-                <div class="container-fluid" id="leaderboard">
+                <!-- Leaderboard-->
+                <div class="container-fluid pb-5" id="leaderboard">
                     <div class="row">
                         <div class="col-md-3 col-sm-2">
 
                         </div>
-                        <div class="col-md-6 col-sm-8 mx-auto text-center pt-5 mt-5 pb-5 mb-5">
-                            <img src="/Images/leaderboard_title.png" width="100%" style="transform: scale(1.0);" alt="">
-                            <div class="" id="backgroundSwitch">
+                        <!-- Switches & Search -->
+                        <div class="col-md-6 col-sm-8 mx-auto text-center pt-5 mt-5">
+                            <div class="wow fadeInDown">
+                                <img src="/Images/leaderboard_title.png" width="100%" style="transform: scale(1.0);"
+                                    alt="">
+                            </div>
+
+                            <div class=" wow fadeInLeft" id="backgroundSwitch">
                                 <button id="switchInner1" onclick="switchLeaderboardRecent()">
                                     RECENT TRASH
                                 </button>
@@ -196,18 +213,22 @@
                             </div>
                             <br>
                             <div style="display: flex; justify-content:center; align-items:center">
-                                <div class="search mb-3">
+                                <div class="search mb-3  wow fadeInRight">
                                     <input type="text" placeholder="Search.." name="search">
-                                    <button type="submit"><img src="/Images/search_icon.png" width="25px" alt=""></button>
+                                    <button type="submit"><img src="/Images/search_icon.png" width="25px"
+                                            alt=""></button>
                                 </div>
                             </div>
+                            <!-- Switches & Search End -->
+
+                            <!-- Leaderboard Cards -->
                             <div style="display: flex; justify-content:center; align-items:center">
                                 <div class="leaderboard-body " id="leaderboard-body">
-                                    <div class="container-leaderboard mt-4 bg-light text-left">
-                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                    <div class="container-leaderboard mt-4 bg-light text-left wow fadeInLeft">
+                                        <img src="/Images/TIER 3.png" alt="" id="badge">
                                         <div class="block-text-leaderboard" style="">
-                                            <h3 id = "nama-leaderboard">Marcellino Julian Gozal</h5>
-                                            <h5 id="pesan-leaderboard">Indonesia beach beach beach beach beach</h6>
+                                            <h3 id="nama-leaderboard">Marcellino Julian Gozal</h5>
+                                                <h5 id="pesan-leaderboard">Indonesia beach beach beach beach beach</h6>
                                         </div>
                                         <div class="block-text-right-leaderboard">
                                             <h3 class="leaderboard-amount">
@@ -217,11 +238,11 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    <div class="container-leaderboard mt-4 bg-light text-left">
-                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                    <div class="container-leaderboard mt-4 bg-light text-left wow fadeInRight">
+                                        <img src="/Images/TIER 2.png" alt="" id="badge">
                                         <div class="block-text-leaderboard" style="">
-                                            <h3 id = "nama-leaderboard">Glenn Steven Santoso</h5>
-                                            <h5 id="pesan-leaderboard">Long live Indonesia's Beach !</h6>
+                                            <h3 id="nama-leaderboard">Glenn Steven Santoso</h5>
+                                                <h5 id="pesan-leaderboard">Long live Indonesia's Beach !</h6>
                                         </div>
                                         <div class="block-text-right-leaderboard">
                                             <h3 class="leaderboard-amount">
@@ -231,11 +252,12 @@
                                             </h3>
                                         </div>
                                     </div>
-                                    <div class="container-leaderboard mt-4 bg-light text-left">
-                                        <img src="/Images/tanda_seru.png" alt="" id="badge">
+                                    <div class="container-leaderboard mt-4 bg-light text-left wow fadeInLeft">
+                                        <img src="/Images/TIER 1.png" alt="" id="badge">
                                         <div class="block-text-leaderboard" style="">
-                                            <h3 id = "nama-leaderboard">Yefta Nathaniel Watson</h5>
-                                            <h5 id="pesan-leaderboard"></h6>
+                                            <h3 id="nama-leaderboard">Yefta Nathaniel Watson</h5>
+                                                <h5 id="pesan-leaderboard">
+                                                    </h6>
                                         </div>
                                         <div class="block-text-right-leaderboard">
                                             <h3 class="leaderboard-amount">
@@ -247,49 +269,54 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Leaderboard Cards End -->
                         </div>
                         <div class="col-md-3 col-sm-2">
 
                         </div>
                     </div>
-                    <div class="text-center">
-                        <a href="#donationCard"><button id="btnSubmit" class="pl-5 pr-5"> Save the beach yourself</button></a>
-                    </div>
-                    
+
+                    <!-- <div class="text-center mt-5">
+                        <a href="#donationCard"><button id="btnSubmit" class="pl-5 pr-5"> Save the beach</button></a>
+                    </div> -->
+
+
+
+                </div>
+                <!-- Leaderboard End -->
+                <div class="text-left" style="">
+                    <!-- <img src="/Images/bottom_background.png" alt="" id="bottom_background"> -->
                 </div>
             </div>
-            <!-- <div class="bottom_background" style="display: inline-block;">
-                <img src="/Images/bottom_background.png" alt="" width="100%">
-            </div> -->
-        </div>
+            <!-- Container donasi & Leaderboard end -->
 
-        <div w3-include-html="/htmls/footer.html"></div>
-        
+            <div class="" style="z-index: -3;height:10vh;background:#c28400">
+
+                <div class="separator text-left">
+
+                </div>
+
+            </div>
+
+
+            <div class="container-fluid location-container text-center" id="location-container">
+                <h1 class="project-location-title">
+                    PROJECT LOCATIONS
+                </h1>
+                <div class="map-container">
+                    <img src="/Images/location_map.png" alt="" id="map-image">
+                </div>
+            </div>
+
+            <div w3-include-html="/htmls/footer.html"></div>
+        </div>
     </body>
 </div>
 
 <!-- Javascripts -->
 <script>
 
-    //Navbar Function
-    function openNav() {
-        document.getElementById("openBtn").style.visibility = "hidden";
 
-
-        document.getElementById("mySidebar").style.width = "20%";
-        document.getElementById("main").style.marginLeft = "20%";
-        if (window.innerWidth <= 600) {
-            document.getElementById("mySidebar").style.width = "100%";
-            document.getElementById("main").style.marginLeft = "100%";
-        }
-    }
-
-    function closeNav() {
-        document.getElementById("openBtn").style.visibility = "visible";
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
-    //Navbar Function End
 
 
     //Animate Number Function
@@ -400,6 +427,8 @@
             if (amount != null) {
                 $("#donationCard").hide();
                 $("#donationCard2").show();
+                document.getElementById("donationCardLink").href = "#donationCard2";
+                document.getElementById("donation-card-link-footer").href = "#donationCard2";
                 var jumlahBayar = parseInt(amount) * 5000;
                 const currencyFractionDigits = new Intl.NumberFormat('de-DE', {
                     style: 'currency',
@@ -418,6 +447,8 @@
         $("#previousCard").click(function () {
             $("#donationCard2").hide();
             $("#donationCard").show();
+            document.getElementById("donationCardLink").href = "#donationCard";
+            document.getElementById("donation-card-link-footer").href = "#donationCard";
             inputAmount.value = "";
             buttonBefore.style.backgroundColor = "#fceee1";
             buttonBefore.style.border = "0.5px solid #e9cea0";
