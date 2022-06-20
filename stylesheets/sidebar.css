@@ -90,11 +90,29 @@
 
 
 .profile{
-    bottom: 0;
-    position: absolute;
-    border-top: 0.8px solid rgba(90, 90, 90, 0.555);
+    /* border-bottom: 0.8px solid rgba(90, 90, 90, 0.555); */
     width: 100%;
     padding-bottom: 50px;
+}
+
+.photo-container{
+    margin-left: 30%;
+    margin-top: 20px;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.profile-photo{
+
+    width: 100%;
+
+}
+
+.ask-account a:hover{
+    color: rgb(87, 86, 86);
 }
 
 
@@ -111,6 +129,7 @@ hr{
         font-size: 18px;
     }
 }
+
 
 
 /* Sidebar End */

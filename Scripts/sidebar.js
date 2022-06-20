@@ -9,6 +9,10 @@ function openNav() {
         document.getElementById("mySidebar").style.width = "100%";
         document.getElementById("main").style.marginLeft = "100%";
     }
+    else if (window.innerWidth <= 1000) {
+        document.getElementById("mySidebar").style.width = "50%";
+        document.getElementById("main").style.marginLeft = "50%";
+    }
 }
 
 function closeNav() {

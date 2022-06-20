@@ -109,17 +109,25 @@
                                 ">Female</div>
                                 <br>
                                 <label for="password" class="inputLabel font-weight-bold">Password</label> <br>
-                                <input type="password" name="password" id="password" placeholder="Type your password"
-                                    class="inputBox">
+                                <div>
+                                    <input type="password" name="password" id="password"
+                                        placeholder="Type your password" class="inputBox">
+                                    <i class="fa fa-eye-slash" id="see_password" aria-hidden="true"
+                                        data-is_password=true></i>
+                                </div>
+
                                 <br>
                                 <label for="confirm_password" class="inputLabel font-weight-bold pt-2">Confirm
                                     Password</label><br>
-                                <input type="password" name="confirm-password" id="confirm-password"
-                                    placeholder="Confirm your password" class="inputBox"><br>
-                                <div class="text-right pt-3">
+                                <div>
+                                    <input type="password" name="confirm-password" id="confirm-password"
+                                        placeholder="Confirm your password" class="inputBox">
+                                    <i class="fa fa-eye-slash" id="see_password" aria-hidden="true"
+                                        data-is_password=true></i>
                                 </div>
+
                                 <br>
-                                <div class="text-center pt-3">
+                                <div class="text-center">
                                     <input type="submit" name="" id="" class="register" value="Register now">
                                 </div>
                                 <div class="text-center pt-3">
@@ -161,6 +169,20 @@
         page2.style.display = "none";
         page1.style.display = "flex";
     }
+
+    $(document).ready(function () {
+        //id sesuaiin kebutuhan
+        $(document).on('click', '#see_password', function () {
+            if ($(this).data('is_password')) {
+                $(this).parent().find('input[type=password]').attr('type', 'text');
+                $(this).data('is_password', false)
+            } else {
+                $(this).parent().find('input[type=text]').attr('type', 'password');
+                $(this).data('is_password', true)
+            }
+            $(this).toggleClass('fa-eye fa-eye-slash')
+        })
+    });
 </script>
 
 </html>

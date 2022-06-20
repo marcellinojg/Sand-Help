@@ -40,7 +40,7 @@ body{
 .footer {
     padding-top: 30px;
     bottom: 0;
-    background-color: #ffcc5e;
+    background-color: #c28400;
     z-index: 2;
 }
 
@@ -91,5 +91,15 @@ body{
         display: none;
     }
 
+    .link-left, .link-right{
+        display: none;
+    }
+
+}
+
+@media (min-width:641px) and (max-width:1000px) {
+    .link-left, .link-right{
+        display: none;
+    }
 }
 /* Footer End */
